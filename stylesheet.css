@@ -40,6 +40,14 @@ header {
     .dontShowNav {
         display: none;
     }
+    .text {
+        width: 100%;
+        display: block;
+    }
+    .img-cont {
+        width: 100%;
+        display: block;
+    }
 }
 .nav p {
     font-size: 1.5rem;
@@ -183,6 +191,7 @@ div > img{
     width: 100%;
     height: 40vh;
     display: flex;
+    flex-direction: column;
     /* flex-wrap: wrap; */
     justify-content: center;
 }
@@ -208,7 +217,7 @@ div > img{
     border: solid 1px red; 
 }
 #footer{
-    height: 22vh;
+    height: 20vh;
     text-align: center;
     background-color: rgb(0, 0, 0);
 }
