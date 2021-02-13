@@ -1,224 +1,281 @@
-body{
-    margin: 0;
-    /* font-family: 'Liberation Mono', 'Keraleeyam'; */
-    font-weight: 500px; 
-    color: white;
-    background-color: rgb(0, 0, 0);
-    text-align: center;
-    -webkit-font-smoothing: antialised;
-    -moz-osx-font-smoothing: grayscale;
-}
-.nav{
-    background-color: rgba(211, 22, 22, 1);
-    font-size: 20px;
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    justify-content: flex-end;
-    align-content: center;
-    position: fixed;
-    top: 0;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.65);
-    padding: 0 2rem;
-    z-index: 100;
-}
-header {
-    position: absolute;
-};
-
-
-.sidenav {
-    display: none;
-}
-
-@media only screen and (max-width: 1000px) {
-    .nav{
+    body {
+        margin: 0;
+        /* font-family: 'Liberation Mono', 'Keraleeyam'; */
+        font-weight: 500px;
+        color: white;
+        background-color: rgb(0, 0, 0);
+        text-align: center;
+        -webkit-font-smoothing: antialised;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .nav {
+        background-color: rgba(211, 22, 22, 1);
+        font-size: 20px;
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        justify-content: flex-end;
+        align-content: center;
+        position: fixed;
+        top: 0;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.65);
+        padding: 0 2rem;
+        z-index: 100;
+    }
+    
+    header {
+        position: absolute;
+    }
+    
+    ;
+    .sidenav {
         display: none;
     }
-    .sidenav {
-        width: 70%;
-        max-width: 300px;
-        height: 100vh;
+    
+    @media only screen and (max-width: 1000px) {
+        .nav {
+            display: none;
+        }
+        .sidenav {
+            width: 70%;
+            max-width: 300px;
+            height: 100vh;
+        }
+        .dontShowNav {
+            display: none !important;
+        }
+        #welcome-section {
+            flex-direction: column-reverse !important;
+        }
     }
-    .dontShowNav {
-        display: none !important;
+    
+    .nav p {
+        font-size: 1.5rem;
+        font-weight: 500;
     }
+    
+    li {
+        margin: 8px;
+        list-style: none;
+        display: inline;
+        font-size: 1.2rem;
+        color: rgba(250, 250, 250, .85);
+        transition: all .2s ease-out;
+    }
+    
+    li:hover {
+        color: white;
+        text-decoration: underline!important;
+    }
+    
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    
+    a :hover {
+        color: #fff;
+    }
+    
     #welcome-section {
-        flex-direction: column-reverse !important;
+        height: 100vh;
+        width: rgba(32, 31, 31, 1) 100%;
+        margin-top: 10vh;
+        background-color: rgb(0, 0, 0);
+        text-align: center;
+        position: relative;
     }
-}
-.nav p {
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-li{
-    margin:8px;
-    list-style: none;
-    display: inline;
-    font-size: 1rem;
-    color: rgba(250, 250, 250, .85);
-    transition: all .3s ease-out;
-}
-li:hover{
-    color: white;
-    text-decoration: white;
-}
-a{
-    color: white;
-    text-decoration: none;
-}
-#welcome-section{
-    height: 91vh;
-    width:rgba(32, 31, 31, 1) 100%;
-    margin-top: 10vh;
-    background-color: rgb(0, 0, 0);
-    text-align: center;
-    position: relative;
-}
-#intro h1{
-    word-spacing:-10px;
-}
-#welcome-section {
-    padding: 0 10%;
-}
-.text div h1 {
-    margin: 0px;
-    font-size: clamp(40px, 8vw, 80px);
-    font-weight: 600;
-    font-family: 'Roboto', sans-serif;
-}
-.text p:nth-of-type(1) {
-    color:  rgb(255, 4, 4);
-    margin: 0px 0px 8px 4px;
-    font-family: "Space Mono", "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
-    font-size: clamp(1rem, 5vw, 1.2rem);
-    font-weight: 400;
-}
-.text p:nth-of-type(2) {
-    color:rgba(211, 211, 211, 0.875);
-    margin: 24px 0 50px;
-}
-.text {
-    text-align: left;
-}
-
-.img-cont img {
-    width: 100%;
-    max-width: 25rem;
-    height: auto;
-    padding: 1rem;
-    border: .4rem solid rgb(255, 4, 4);
-    border-radius: 50%;
-}
-#projects{
-    padding: 10vh 0 5vh 0;
-    text-align: center;
-    background-color: white;
-}
-#projects h2{
-    font-size: 2em;
-}
-#projects hr{
-   margin: -1.3em 2.6em 0 2.6em;
-   height: 0px;
-   background-color: white;
-   border: white 0.8px solid;
-}
-#grid-cont{
-    background-color: inherit;
-    margin: 20px;
-    padding: 10px;
-    border-radius: 3px;
-    display:grid; 
-    grid-gap: 30px;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-}
-.project-tile{
-    background-color: purple;
-    /* box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.65); */
-}
-.project-tile:hover{
-    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-}
-div > img{
-   width: 100%; 
-   height: 150px; 
-}
-.title{
-    font-weight: normal;
-    font-size: .75rem;
-    padding: 10px;
-    text-align: center;
-    background-color: rgb(0, 0, 0);
-}
-#seemore{
-    background-color:white;
-    font-weight: 600;
-    display: flex;
-    justify-content: center;
-    margin: 2em 0 5em 0;
-}
-#seemore div{
-    width: 7em;
-    padding: 8px 0 8px 0;
-    background-color: rgba(211, 22, 22, 1);
-    border-radius: 4px;
-    box-shadow: 1px 1px 2px black;
-}
-#seemore div:hover{
-    background-color:rgba(32, 31, 31, 1);
-}
-#contact{
-    padding: 3em 1em 0 1em; 
-    height: 60vh;
-    background-color:rgb(0, 0, 0);
-    text-align: center;
-}
-#contact h1{
-    font: "Liberation Sans";
-    font-size: 2.5em;
-    font-weight: 700;
-    color: whitesmoke;
-}
-#contact h3{
-    font-family: "Bitstream Charter";
-    font-style: italic;
-    font-size: 20px;
-    font-weight: 100;
-    margin-top: -20px; 
-}
-#cont{
-    width: 100%;
-    height: 40vh;
-    display: flex;
-    flex-direction: column;
-    /* flex-wrap: wrap; */
-    justify-content: center;
-}
-.conts{
-    /* display: block; */
-    font-size: x-large; 
-    font-weight: 550;
-    margin: 0 15px 0 15px; 
-}
-@media only screen and (max-width: 650px) {
-    .conts{
-        font-size: large;
+    
+    #intro h1 {
+        word-spacing: -10px;
     }
-}
-@media only screen and (max-height: 650px){
-    .conts{
-        font-size: large;
+    
+    #welcome-section {
+        padding: 0 10%;
     }
-}
-#hr{
-    background-color:rgba(211, 22, 22, 1);
-    height: 1px;
-    border: solid 1px red; 
-}
-#footer{
-    height: 20vh;
-    text-align: center;
-    background-color: rgb(0, 0, 0);
-    font-size: .75rem;
-}
+    
+    .text div h1 {
+        margin: 0px;
+        font-size: clamp(40px, 8vw, 80px);
+        font-weight: 600;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    .text p:nth-of-type(1) {
+        color: rgb(255, 4, 4);
+        margin: 0px 0px 8px 4px;
+        font-family: "Space Mono", "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+        font-size: clamp(1rem, 5vw, 1.2rem);
+        font-weight: 400;
+    }
+    
+    .text p:nth-of-type(2) {
+        color: rgba(211, 211, 211, 0.875);
+        margin: 24px 0 50px;
+    }
+    
+    .text {
+        text-align: left;
+    }
+    
+    .img-cont img {
+        width: 100%;
+        max-width: 25rem;
+        height: auto;
+        padding: 1rem;
+        border: .4rem solid rgb(255, 4, 4);
+        border-radius: 50%;
+    }
+    
+    #projects {
+        padding: 10vh 0 5vh 0;
+        text-align: center;
+        background-color: white;
+    }
+    
+    #projects h2 {
+        font-weight: 550;
+        font-size: 2em;
+        color: #000;
+        opacity: .85;
+    }
+    
+    #projects hr {
+        margin: -1.3em 2.6em 0 2.6em;
+        height: 0px;
+        background-color: white;
+        border: white 0.8px solid;
+    }
+    
+    .svg {
+        color: #fff;
+        font-size: .5rem;
+    }
+    
+    #grid-cont {
+        background-color: inherit;
+        margin: 20px;
+        padding: 10px;
+        border-radius: 3px;
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    
+    .project-tile {
+        background-color: purple;
+        box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.65);
+        transition: all .25s ease-out;
+    }
+    
+    .project-tile:hover {
+        box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+    }
+    
+    div>img {
+        width: 100%;
+        height: 150px;
+    }
+    
+    .title {
+        font-weight: normal;
+        font-size: 1.15rem;
+        padding: 10px;
+        text-align: center;
+        background-color: rgb(0, 0, 0);
+    }
+    
+    .title i {
+        opacity: .6;
+    }
+    
+    .title i :hover {
+        opacity: .875;
+    }
+    
+    #seemore {
+        background-color: white;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        margin: 2em 0 5em 0;
+    }
+    
+    #seemore div {
+        width: 7em;
+        padding: 8px 0 8px 0;
+        background-color: rgba(211, 22, 22, 1);
+        border-radius: 4px;
+        box-shadow: 1px 1px 2px black;
+    }
+    
+    #seemore div:hover {
+        background-color: rgba(32, 31, 31, 1);
+    }
+    
+    #contact {
+        padding: 3em 1em 0 1em;
+        height: 60vh;
+        background-color: rgb(0, 0, 0);
+        text-align: center;
+    }
+    
+    #contact h1 {
+        font: "Liberation Sans";
+        font-size: 2.5em;
+        font-weight: 700;
+        color: whitesmoke;
+    }
+    
+    #contact h3 {
+        font-family: "Bitstream Charter";
+        font-style: italic;
+        font-size: 20px;
+        font-weight: 100;
+        margin-top: -20px;
+    }
+    
+    #cont {
+        width: 100%;
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+        justify-content: center;
+    }
+    
+    .conts {
+        /* display: block; */
+        font-size: x-large;
+        font-weight: 550;
+        margin: 0 15px 0 15px;
+    }
+    
+    @media only screen and (max-width: 650px) {
+        .conts {
+            font-size: large;
+        }
+        .nav {
+            height: 8vh;
+        }
+    }
+    
+    @media only screen and (max-height: 650px) {
+        .conts {
+            font-size: large;
+        }
+    }
+    
+    #hr {
+        background-color: rgb(255, 4, 4);
+        height: 2px;
+        border: solid 1px rgb(255, 4, 4);
+    }
+    
+    f #footer {
+        height: 10vh;
+        text-align: center;
+        background-color: rgb(0, 0, 0);
+        font-size: 1.4rem;
+    }
