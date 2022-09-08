@@ -1,0 +1,44 @@
+@import url("https://use.typekit.net/oye3wyh.css");
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@font-face {
+  font-family: "Codec";
+  src: url("../assets/fonts/codec/Codec-Cold-Regular-trial.ttf") format("truetype");
+}
+
+@layer base {
+  body {
+    font: normal 18px/1.6 "bitter", Cambria, Georgia, serif;
+    font-variant-ligatures: no-common-ligatures;
+    font-feature-settings: 'calt'0;
+    padding-left: 6em;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    @apply bg-brand-black text-brand-white max-w-full overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Codec", Arial, "Helvetica Neue", Helvetica, sans-serif;
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+}
+
+@layer utilities {
+  .section__title {
+    counter-increment: section;
+    font-size: 2.667em;
+    text-transform: uppercase;
+  }
+}
