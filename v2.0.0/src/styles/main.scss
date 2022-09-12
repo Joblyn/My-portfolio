@@ -1,11 +1,16 @@
-@import url("https://use.typekit.net/oye3wyh.css");
+/* custom responsive styles */
+@import "./desktop.scss";
+@import "./mobile.scss";
+@import "./tablet.scss";
 
+/* tailwind styles */
 @tailwind base;
 
 @tailwind components;
 
 @tailwind utilities;
 
+/* custom styles */
 @font-face {
   font-family: "Codec";
   src: url("../assets/fonts/codec/Codec-Cold-Regular-trial.ttf") format("truetype");

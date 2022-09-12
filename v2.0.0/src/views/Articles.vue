@@ -1,16 +1,13 @@
 <template>
-  <main>
-    <router-view />
-  </main>
+  <div id="articles">
+    <h1>This is the articles page</h1>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import "@/styles/main.scss";
 
 export default defineComponent({
-  name: "App",
+  name: "Articles",
 });
 </script>
-
-<style lang="scss"></style>

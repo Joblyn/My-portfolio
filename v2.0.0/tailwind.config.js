@@ -10,30 +10,30 @@ module.exports = {
         "Cambria",
         "Georgia",
         "serif",
-        ...defaultTheme.fontFamily.sans
-      ]
+        ...defaultTheme.fontFamily.sans,
+      ],
     },
     screens: {
       sm: "576px",
       md: "768px",
       lg: "992px",
       xl: "1200px",
-      "2xl": "1440px"
+      "2xl": "1440px",
     },
     extend: {
       colors: {
         "brand-white": "#f4f4f8",
         "brand-green": {
           DEFAULT: "#20bf55",
-          dark: "#091619"
+          dark: "#091619",
         },
         "brand-blue": {
           DEFAULT: "#1663fe",
-          dark: "#4985fe"
+          dark: "#4985fe",
         },
-        "brand-black": "#050c0e"
-      }
-    }
+        "brand-black": "#050c0e",
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 };

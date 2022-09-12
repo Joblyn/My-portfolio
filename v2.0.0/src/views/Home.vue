@@ -1,16 +1,13 @@
 <template>
-  <main>
-    <router-view />
-  </main>
+  <div id="home">
+    <h1>This is the home page</h1>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import "@/styles/main.scss";
 
 export default defineComponent({
-  name: "App",
+  name: "Home",
 });
 </script>
-
-<style lang="scss"></style>
