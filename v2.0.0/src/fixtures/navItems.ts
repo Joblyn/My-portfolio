@@ -1,4 +1,10 @@
-const navItems = [
+interface NavItem {
+  name: string;
+  url: string;
+  type: string;
+}
+
+const navItems: NavItem[] = [
   {
     name: "Articles",
     url: "/articles",

@@ -2,7 +2,7 @@
   <div id="fixed-nav" class="fixed-nav">
     <nav class="flex items-center justify-evenly w-full md:block">
       <h1>
-        <router-link :to="ROUTES.HOME.path" class="logo">
+        <router-link :to="ROUTES.HOME.path" class="logo" data-test="logo">
           Job Oaikhenah: Frontend Engineer
         </router-link>
       </h1>
@@ -11,6 +11,7 @@
           <li
             v-for="item in navItems"
             :key="item.name"
+            data-test="nav-item"
             class="navigation__item"
           >
             <router-link :to="item.url" class="navigation__link">
@@ -26,7 +27,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import * as ROUTES from "@/router/constants";
-import navItems from "@/fixtures/navItems.js";
+import navItems from "@/fixtures/navItems";
 import "@/components/FixedNav/style.scss";
 
 export default defineComponent({

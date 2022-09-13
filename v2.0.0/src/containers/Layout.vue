@@ -1,7 +1,7 @@
 <template>
-  <div class="">
+  <div>
     <fixed-nav />
-    <page></page>
+    <page />
   </div>
 </template>
 
