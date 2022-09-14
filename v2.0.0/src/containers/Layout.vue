@@ -1,7 +1,10 @@
 <template>
   <div>
-    <fixed-nav />
-    <page />
+    <preloader />
+    <div>
+      <fixed-nav />
+      <page />
+    </div>
   </div>
 </template>
 
@@ -9,12 +12,14 @@
 import { defineComponent } from "vue";
 import FixedNav from "@/components/FixedNav/FixedNav.vue";
 import Page from "@/containers/Page.vue";
+import Preloader from "@/components/Preloader/Preloader.vue";
 
 export default defineComponent({
   name: "Layout",
   components: {
     FixedNav,
     Page,
+    Preloader,
   },
 });
 </script>
