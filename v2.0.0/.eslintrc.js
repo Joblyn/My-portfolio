@@ -17,6 +17,7 @@ module.exports = {
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
     "vue/v-bind-style": 1,
     "vue/multi-word-component-names": "off",
+    "vue/no-multiple-template-root": 0,
   },
   overrides: [
     {

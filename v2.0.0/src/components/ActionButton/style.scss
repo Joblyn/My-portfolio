@@ -1,0 +1,21 @@
+.button__solid {
+  background: #1663fe;
+  font-family: "Codec", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #f4f4f8;
+  border: none;
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 1.2em 1em 1em;
+  font-size: 1em;
+  text-transform: uppercase;
+  line-height: 1;
+  transition: background 0.3s ease-out;
+  font-variant-ligatures: no-common-ligatures;
+  font-feature-settings: "calt" 0;
+}
+
+.header__button {
+  margin-top: 1.5em;
+}
