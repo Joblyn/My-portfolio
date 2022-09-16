@@ -1,49 +1,60 @@
-<svg
-  width="620"
-  height="620"
-  viewBox="0 0 620 620"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
+<template>
+  <svg
+    width="620"
+    height="620"
+    viewBox="0 0 620 620"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    data-test="logo"
+  >
     <path d="M146 124H467V544H146V124Z" fill="#091619" />
     <rect
-    x="185"
-    y="221"
-    width="25"
-    height="135"
-    transform="rotate(-90 185 221)"
-    fill="white"
-  />
+      x="185"
+      y="221"
+      width="25"
+      height="135"
+      transform="rotate(-90 185 221)"
+      fill="white"
+    />
     <rect x="185" y="145" width="27" height="76" fill="white" />
     <rect
-    x="185"
-    y="171"
-    width="26"
-    height="190"
-    transform="rotate(-90 185 171)"
-    fill="white"
-  />
+      x="185"
+      y="171"
+      width="26"
+      height="190"
+      transform="rotate(-90 185 171)"
+      fill="white"
+    />
     <ellipse cx="306.5" cy="404" rx="121.5" ry="122" fill="white" />
     <ellipse cx="307" cy="404" rx="95" ry="96" fill="#091619" />
     <ellipse cx="307" cy="404" rx="68" ry="70" fill="white" />
     <ellipse cx="307" cy="402.5" rx="41" ry="42.5" fill="#091619" />
     <circle cx="306.5" cy="403.5" r="13.5" fill="white" />
     <path
-    d="M427.415 402H185.593C179.838 371.258 215.695 276 304.999 276C394.303 276 433.345 368.053 427.415 402Z"
-    fill="#091619"
-  />
+      d="M427.415 402H185.593C179.838 371.258 215.695 276 304.999 276C394.303 276 433.345 368.053 427.415 402Z"
+      fill="#091619"
+    />
     <rect x="185" y="145" width="27" height="76" fill="white" />
     <rect x="185" y="296" width="27" height="108" fill="white" />
     <rect
-    x="185"
-    y="321"
-    width="25"
-    height="81"
-    transform="rotate(-90 185 321)"
-    fill="white"
-  />
+      x="185"
+      y="321"
+      width="25"
+      height="81"
+      transform="rotate(-90 185 321)"
+      fill="white"
+    />
     <rect x="239" y="297" width="27" height="106" fill="white" />
     <rect x="402" y="145" width="26" height="258" fill="white" />
     <rect x="348" y="145" width="27" height="259" fill="white" />
     <rect x="293" y="196" width="27" height="208" fill="white" />
   </svg>
+</template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "Logo",
+});
+</script>

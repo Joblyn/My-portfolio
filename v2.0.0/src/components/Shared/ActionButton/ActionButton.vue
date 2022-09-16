@@ -2,17 +2,18 @@
   <a v-if="type === 'link'" :href="link" :class="classes">
     <slot></slot>
   </a>
-  <router-link v-if="type === 'router-link'" :to="route" :class="classes">
+  <router-link v-else-if="type === 'router-link'" :to="route" :class="classes">
     <slot></slot>
   </router-link>
-  <button v-if="type === 'button'" :class="classes" @click="action">
+  <button v-else-if="type === 'button'" :class="classes" @click="action">
     <slot></slot>
   </button>
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive } from "vue";
-import "@/components/ActionButton/style.scss";
+
+import "@/components/Shared/ActionButton/style.scss";
 
 export default defineComponent({
   name: "ActionButton",
@@ -42,9 +43,8 @@ export default defineComponent({
   },
   setup(props) {
     const classes = reactive({
-      button: true,
       button__outline: props.classType === "outline",
-      button_solid: props.classType === "solid",
+      button__solid: props.classType === "solid",
       header__button: props.header,
     });
     const action = () => {

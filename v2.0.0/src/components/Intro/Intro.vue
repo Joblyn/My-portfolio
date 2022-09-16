@@ -20,14 +20,12 @@
         </h2>
         <p class="header__subtitle">Welcome to my online portfolio and CV</p>
         <p>
-          I'm a Frontend Engineer, I build user-friendly, intuitive and
-          accessible web applications. He is skilled, with a wealth of
-          experience, in multiple frontend technologies including: HTML, CSS,
-          JavaScript, jQuery, ReactJS, VueJs and a host of others. I have keen
-          problem-solving skills with the use of technology and is an avid
-          learner, ready and willing to take on new challenges. I'm a community
-          enthusiast and an active member of multiple tech communities
-          including. I also technical articles at my leisure.
+          I'm a Frontend Engineer. I build user-friendly, intuitive and
+          accessible web applications. I'm a logical, goal driven and diligent
+          young champ, committed to growing businesses and improving users'
+          satisfaction accross web. I solve problems with the use codes and
+          technologies, applying best practices within the contexts of
+          well-suited use cases, optimising performance and aesthetics.
         </p>
         <action-button
           type="link"
@@ -44,8 +42,9 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+
 import "@/components/Intro/style.scss";
-import ActionButton from "@/components/ActionButton/ActionButton.vue";
+import ActionButton from "@/components/Shared/ActionButton/ActionButton.vue";
 
 export default defineComponent({
   name: "Intro",

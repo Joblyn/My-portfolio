@@ -10,6 +10,25 @@
   padding: 0 1em;
   z-index: 20;
 
+  .logo {
+    width: 100%;
+    text-indent: -9999px;
+    font-size: 1em;
+    margin: 1.5em 0;
+    line-height: 0;
+    overflow: hidden;
+    display: block;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      padding-bottom: 100%;
+      background: url(../../assets/images/logo.svg) no-repeat center center;
+      background-size: 100%;
+    }
+  }
+
   .navigation {
     -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
@@ -87,6 +106,14 @@
     -ms-flex-pack: center;
     justify-content: center;
     position: fixed;
+
+    .logo {
+      margin: 0;
+
+      &::after {
+        width: 50px;
+      }
+    }
 
     .navigation {
       -webkit-transform: none;

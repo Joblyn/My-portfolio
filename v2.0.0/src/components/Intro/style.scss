@@ -39,6 +39,8 @@
     width: calc(100% - (2 * 1em));
     margin-left: 1em;
     margin-right: 1em;
+    margin-top: auto;
+    margin-bottom: auto;
 
     .header__title {
       font-size: 3.9em;
@@ -98,9 +100,24 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .header__wrapper {
+    .header__content {
+      .header__title {
+        font-size: 2.5em;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 992px) {
   .header__wrapper {
     height: auto;
+    .header__content {
+      .header__title {
+        font-size: 2em;
+      }
+    }
   }
 }
 @media screen and (min-width: 1200px) {

@@ -7,14 +7,11 @@
       id="top"
       class="h-1/2 absolute top-0 left-0 w-screen bg-brand-green-dark"
     ></div>
-    <div id="logo">
-      <!-- <LogoSVG /> -->
-      <img
-        src="@/assets/images/logo.svg"
-        class="w-32 md:w-48 2xl:w-60 absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50"
-        alt="logo"
-        data-test="logo"
-      />
+    <div
+      id="logo"
+      class="w-32 md:w-48 2xl:w-60 absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 flex items-center justify-center"
+    >
+      <logo />
     </div>
     <div
       id="preloader"
@@ -42,15 +39,16 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from "vue";
-import "@/components/Preloader/style.scss";
 import { gsap } from "gsap";
-// import LogoSVG from "@/assets/images/logo.svg";
+
+import "@/components/Shared/Preloader/style.scss";
+import Logo from "@/components/Shared/Logo/Logo.vue";
 
 export default defineComponent({
   name: "Preloader",
-  // components: {
-  //   LogoSVG,
-  // },
+  components: {
+    Logo,
+  },
   setup() {
     const percent = ref(1);
     const loading = () => {
@@ -100,7 +98,7 @@ export default defineComponent({
       const frame = () => {
         if (percent.value >= 100) {
           clearInterval(id);
-          // tl.play();
+          tl.play();
         } else {
           percent.value++;
           barconfirm.style.width = percent.value + "%";
