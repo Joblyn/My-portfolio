@@ -2,7 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/Home.vue";
 import * as ROUTES from "@/router/constants";
 
-const routes: Array<RouteRecordRaw> = [
+export const routes: Array<RouteRecordRaw> = [
   {
     path: ROUTES.HOME.path,
     name: ROUTES.HOME.name,

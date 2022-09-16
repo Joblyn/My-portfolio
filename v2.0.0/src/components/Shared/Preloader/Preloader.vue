@@ -41,8 +41,8 @@
 import { defineComponent, onMounted, ref } from "vue";
 import { gsap } from "gsap";
 
-import "@/components/Shared/Preloader/style.scss";
-import Logo from "@/components/Shared/Logo/Logo.vue";
+import "@/components/shared/Preloader/style.scss";
+import Logo from "@/components/shared/Logo/Logo.vue";
 
 export default defineComponent({
   name: "Preloader",

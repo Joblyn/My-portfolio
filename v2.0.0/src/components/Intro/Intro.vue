@@ -19,7 +19,7 @@
           a Frontend Engineer
         </h2>
         <p class="header__subtitle">Welcome to my online portfolio and CV</p>
-        <p>
+        <p class="header__article">
           I'm a Frontend Engineer. I build user-friendly, intuitive and
           accessible web applications. I'm a logical, goal driven and diligent
           young champ, committed to growing businesses and improving users'
@@ -29,12 +29,11 @@
         </p>
         <action-button
           type="link"
-          classType="solid"
           :header="true"
           link="#selected-works"
+          data-test="header-button"
+          >View my works</action-button
         >
-          View My Works
-        </action-button>
       </div>
     </div>
   </header>
@@ -44,7 +43,7 @@
 import { defineComponent } from "vue";
 
 import "@/components/Intro/style.scss";
-import ActionButton from "@/components/Shared/ActionButton/ActionButton.vue";
+import ActionButton from "@/components/shared/ActionButton/ActionButton.vue";
 
 export default defineComponent({
   name: "Intro",
