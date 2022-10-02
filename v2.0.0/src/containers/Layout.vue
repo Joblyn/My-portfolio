@@ -15,7 +15,7 @@ import {
 } from "vue";
 import FixedNav from "@/components/FixedNav/FixedNav.vue";
 import Page from "@/containers/Page.vue";
-import Preloader from "@/components/shared/Preloader/Preloader.vue";
+import Preloader from "@/components/Shared/Preloader/Preloader.vue";
 // import gsap from "gsap";
 
 export default defineComponent({

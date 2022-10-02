@@ -1,6 +1,6 @@
 import { mount } from "@vue/test-utils";
 
-import Logo from "@/components/shared/Logo/Logo.vue";
+import Logo from "@/components/Shared/Logo/Logo.vue";
 
 describe("Logo.vue", () => {
   it("renders logo", () => {

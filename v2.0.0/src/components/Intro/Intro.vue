@@ -43,7 +43,7 @@
 import { defineComponent } from "vue";
 
 import "@/components/Intro/style.scss";
-import ActionButton from "@/components/shared/ActionButton/ActionButton.vue";
+import ActionButton from "../Shared/ActionButton/ActionButton.vue";
 
 export default defineComponent({
   name: "Intro",

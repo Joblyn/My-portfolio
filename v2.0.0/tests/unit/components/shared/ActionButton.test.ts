@@ -1,6 +1,6 @@
 import { mount, shallowMount, RouterLinkStub } from "@vue/test-utils";
 
-import ActionButton from "@/components/shared/ActionButton/ActionButton.vue";
+import ActionButton from "@/components/Shared/ActionButton/ActionButton.vue";
 
 describe("ActionButton.vue", () => {
   const createConfig = (config = {}) => ({

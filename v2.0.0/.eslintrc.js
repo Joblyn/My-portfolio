@@ -18,6 +18,12 @@ module.exports = {
     "vue/v-bind-style": 1,
     "vue/multi-word-component-names": "off",
     "vue/no-multiple-template-root": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
+    ],
   },
   overrides: [
     {
