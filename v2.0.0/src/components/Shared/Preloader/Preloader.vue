@@ -88,6 +88,9 @@ export default defineComponent({
         )
         .set("#preloader-wrapper", {
           display: "none",
+        })
+        .set("body", {
+          overflowY: "auto",
         });
 
       const barconfirm = document.querySelector("#barconfirm") as HTMLElement;

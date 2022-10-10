@@ -73,6 +73,10 @@
           font-feature-settings: "calt" 0;
           margin: 0 1em;
           transition: all 0.3s ease-out;
+
+          &:hover {
+            color: #7ca7fe;
+          }
         }
 
         &:not(:last-child) {

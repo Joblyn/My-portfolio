@@ -19,13 +19,16 @@
 
 @layer base {
   body {
-    font: normal 18px/1.6 "bitter", Cambria, Georgia, serif;
+    font-size: 18px/1.6;
+    font-family:"Bitter", Cambria, Georgia, serif;
     font-variant-ligatures: no-common-ligatures;
     font-feature-settings: "calt" 0;
     padding-left: 6em;
     margin: 0;
     padding: 0;
-    line-height: 1.4;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
     @apply bg-brand-green-dark text-brand-white max-w-full overflow-x-hidden;
   }
 
@@ -48,6 +51,10 @@
     color: #4985fe;
     text-decoration: none;
     transition: color 0.3s ease-out;
+
+    &:hover {
+      color: #7ca7fe;
+    }
   }
 }
 
