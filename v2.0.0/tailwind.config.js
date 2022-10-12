@@ -3,6 +3,9 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: ["./public/**/*.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  corePlugins: {
+    preflight: false,
+  },
   theme: {
     fontFamily: {
       sans: [

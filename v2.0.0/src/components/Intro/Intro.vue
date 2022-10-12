@@ -1,5 +1,5 @@
 <template>
-  <header id="intro" class="header loaded">
+  <header id="intro" class="header loaded" aria-label="intro">
     <div class="header__wrapper wrapper">
       <svg class="header__svg" width="100%" height="100%">
         <rect

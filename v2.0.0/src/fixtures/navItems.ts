@@ -1,8 +1,4 @@
-interface NavItem {
-  name: string;
-  url: string;
-  type: string;
-}
+import { NavItem } from "@/interfaces/nav";
 
 const navItems: NavItem[] = [
   {

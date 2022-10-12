@@ -19,8 +19,7 @@
 
 @layer base {
   body {
-    font-size: 18px/1.6;
-    font-family:"Bitter", Cambria, Georgia, serif;
+    font: normal 18px/1.5 "Bitter", Cambria, Georgia, serif;
     font-variant-ligatures: no-common-ligatures;
     font-feature-settings: "calt" 0;
     padding-left: 6em;
@@ -28,6 +27,7 @@
     padding: 0;
     overflow-x: hidden;
     overflow-y: hidden;
+    counter-reset: section;
 
     @apply bg-brand-green-dark text-brand-white max-w-full overflow-x-hidden;
   }
@@ -56,12 +56,55 @@
       color: #7ca7fe;
     }
   }
+
+  article,
+  aside,
+  footer,
+  header,
+  nav {
+    display: block;
+  }
+
+  section,
+  .section {
+    width: calc(100vw - 12em);
+    margin-left: auto;
+    margin-right: auto;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    padding-top: 6em;
+    position: relative;
+  }
+
+  figure {
+    margin: 1em 40px;
+  }
+
+  @media screen and (max-width: 1739px) {
+    section,
+    .section {
+      width: calc(100vw - 6em);
+    }
+  }
+
+  @media screen and (max-width: 739px) {
+    section,
+    .section {
+      width: calc(100vw - 2em);
+      padding-top: 3em;
+    }
+  }
 }
 
 @layer components {
-  .section__title {
-    counter-increment: section;
-    font-size: 2.667em;
-    text-transform: uppercase;
-  }
 }

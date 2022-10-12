@@ -1,0 +1,8 @@
+.work {
+  -ms-scroll-snap-type: mandatory;
+  scroll-snap-type: mandatory;
+  -ms-scroll-snap-points-y: repeat(30em);
+  scroll-snap-points-y: repeat(30em);
+  -ms-scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory;
+}

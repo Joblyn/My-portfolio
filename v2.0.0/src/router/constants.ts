@@ -1,7 +1,4 @@
-interface RouteConfig {
-  path: string;
-  name: string;
-}
+import { RouteConfig } from "@/interfaces/route";
 
 const HOME: RouteConfig = {
   path: "/",
