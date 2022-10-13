@@ -1,8 +1,5 @@
 <template>
-  <main
-    id="main"
-    class="md:w-[calc(100vw-6rem)] md:h-screen w-full h-[calc(100vh-6rem)] md:ml-24"
-  >
+  <main id="main" class="md:w-[calc(100vw-6em)] w-full md:ml-[6em]">
     <router-view></router-view>
   </main>
 </template>

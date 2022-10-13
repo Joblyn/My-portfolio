@@ -73,6 +73,7 @@
     color: #4985fe;
     -webkit-transform: color 0.3s ease-out;
     transform: color 0.3s ease-out;
+    cursor: pointer;
 
     &::after {
       content: "";
@@ -91,8 +92,11 @@
     &:active,
     &:focus {
       color: #7ca7fe;
-      -webkit-transform: translateX(0.5em);
-      transform: translateX(0.5em);
+
+      &::after {
+        -webkit-transform: translateX(0.5em);
+        transform: translateX(0.5em);
+      }
     }
   }
 }

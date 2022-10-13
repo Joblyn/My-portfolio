@@ -19,7 +19,7 @@
 
 @layer base {
   body {
-    font: normal 18px/1.5 "Bitter", Cambria, Georgia, serif;
+    font: normal 16px/1.5 "Bitter", Cambria, Georgia, serif;
     font-variant-ligatures: no-common-ligatures;
     font-feature-settings: "calt" 0;
     padding-left: 6em;
@@ -30,6 +30,18 @@
     counter-reset: section;
 
     @apply bg-brand-green-dark text-brand-white max-w-full overflow-x-hidden;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #20bf5533;
+      border-radius: 5px;
+    }
   }
 
   h1,
@@ -67,7 +79,7 @@
 
   section,
   .section {
-    width: calc(100vw - 12em);
+    width: calc(100% - 12em);
     margin-left: auto;
     margin-right: auto;
     display: -webkit-flex;
@@ -93,14 +105,14 @@
   @media screen and (max-width: 1739px) {
     section,
     .section {
-      width: calc(100vw - 6em);
+      width: calc(100% - 6em);
     }
   }
 
   @media screen and (max-width: 739px) {
     section,
     .section {
-      width: calc(100vw - 2em);
+      width: calc(100% - 2em);
       padding-top: 3em;
     }
   }

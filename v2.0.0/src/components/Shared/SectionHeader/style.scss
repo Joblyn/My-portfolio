@@ -10,9 +10,9 @@
     counter-increment: section;
     font-size: 2.667em;
     text-transform: uppercase;
-    // &::before {
-    //   content: "0" counter(section) ". ";
-    // }
+    &::before {
+      content: "0" counter(section) ". ";
+    }
     &::after {
       content: "";
       display: block;

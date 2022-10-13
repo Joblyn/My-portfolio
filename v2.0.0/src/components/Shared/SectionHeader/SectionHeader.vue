@@ -3,7 +3,6 @@
     <h2 class="section__title">
       <slot></slot>
     </h2>
-
     <slot name="extra"></slot>
   </header>
 </template>

@@ -1,4 +1,4 @@
-interface Img {
+interface Page {
   src: string;
   alt: string;
   caption: string;
@@ -14,8 +14,10 @@ interface Work {
   banner: string;
   height: number;
   width: number;
-  imgs: Img[];
+  pages: Page[];
   tags: Tags;
+  live: string;
+  github: string;
 }
 
 export { Work, Tags };

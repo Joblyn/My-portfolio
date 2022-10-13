@@ -3,12 +3,21 @@
   position: fixed;
   height: 100%;
   width: 6em;
-  border-right: 1px solid rgba(244, 244, 248, 0.2);
+  border-right: 1px solid #f4f4f833;
   left: 0;
   top: 0;
   background: #091619;
   padding: 0 1em;
   z-index: 20;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 
   .logo {
     width: 100%;
@@ -82,7 +91,7 @@
         &:not(:last-child) {
           &::after {
             content: "·";
-            color: rgb(32, 191, 85);
+            color: #20bf55;
             margin: 0px 0.5em;
           }
         }
@@ -97,7 +106,7 @@
     top: auto;
     bottom: 0;
     width: 100%;
-    height: 5em;
+    height: 5em; 
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -105,7 +114,7 @@
     -ms-flex-align: center;
     align-items: center;
     border-right: none;
-    border-top: 1px solid rgba(244, 244, 248, 0.2);
+    border-top: 1px solid #f4f4f833;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
