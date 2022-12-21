@@ -96,7 +96,7 @@ export default defineComponent({
       const barconfirm = document.querySelector("#barconfirm") as HTMLElement;
       let id: number;
       const move = () => {
-        id = setInterval(frame, 10);
+        id = setInterval(frame, 50);
       };
       const frame = () => {
         if (percent.value >= 100) {

@@ -2,12 +2,12 @@
   <a v-if="type === 'link'" :href="href" :class="classes">
     <slot></slot>
   </a>
+  <button v-else-if="type === 'button'" :class="classes" @click="onClick">
+    <slot></slot>
+  </button>
   <router-link v-else-if="type === 'router-link'" :to="route" :class="classes">
     <slot></slot>
   </router-link>
-  <button v-else-if="type === 'button'" :class="classes" @click="action">
-    <slot></slot>
-  </button>
 </template>
 
 <script lang="ts">
@@ -52,15 +52,8 @@ export default defineComponent({
       header__button: props.header,
     });
 
-    const action = () => {
-      if (props.onClick) {
-        props.onClick();
-      }
-    };
-
     return {
       classes,
-      action,
       route,
       href,
     };

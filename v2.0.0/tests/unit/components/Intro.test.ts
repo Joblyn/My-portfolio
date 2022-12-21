@@ -14,7 +14,7 @@ describe("Intro.vue", () => {
   it("renders subtitle", () => {
     const wrapper = shallowMount(Intro);
     const subtitle = wrapper.find(".header__subtitle");
-    expect(subtitle.text()).toMatch("Welcome to my online portfolio and CV");
+    expect(subtitle.text()).toMatch("Welcome to my portfolio");
   });
 
   it("renders content", () => {

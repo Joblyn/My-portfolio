@@ -5,9 +5,7 @@
 
 /* tailwind styles */
 @tailwind base;
-
 @tailwind components;
-
 @tailwind utilities;
 
 /* custom styles */
@@ -28,6 +26,7 @@
     overflow-x: hidden;
     overflow-y: hidden;
     counter-reset: section;
+    scroll-behavior: smooth;
 
     @apply bg-brand-green-dark text-brand-white max-w-full overflow-x-hidden;
 
