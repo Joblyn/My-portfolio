@@ -8,11 +8,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* custom styles */
 @font-face {
   font-family: "Codec";
   src: url("../assets/fonts/codec/Codec-Cold-ExtraBold-trial.ttf")
     format("truetype");
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/Gilroy/Gilroy-ExtraBold.otf") format("opentype");
 }
 
 @layer base {

@@ -1,5 +1,5 @@
 <template>
-  <section id="work" class="work section">
+  <section id="selected-work" class="work section">
     <section-header>Selected Work</section-header>
     <work-items />
   </section>

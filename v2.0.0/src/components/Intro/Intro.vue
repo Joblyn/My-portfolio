@@ -52,7 +52,7 @@ export default defineComponent({
   },
   setup() {
     const scrollToWork = () => {
-      document.getElementById("work")?.scrollIntoView({
+      document.getElementById("selected-work")?.scrollIntoView({
         behavior: "smooth",
       });
     };
