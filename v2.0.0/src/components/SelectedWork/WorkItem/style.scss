@@ -151,7 +151,7 @@
   .work__item {
     .work__wrapper {
       .work__image {
-        left: 0;
+        // left: 0;
         // -webkit-transform: translateX(-7em);
         // transform: translateX(-7em);
       }
@@ -185,12 +185,13 @@
   }
 }
 
-@media screen and (max-width: 739px) {
+@media screen and (max-width: 767px) {
   .work__item {
     .work__wrapper {
       height: 20em;
       .work__image {
         width: 100vw;
+        transform: translateX(-1em);
         img {
           padding: 0 1em;
         }
@@ -203,12 +204,12 @@
   }
 }
 
-@media screen and (max-width: 576px) {
-  .work__item {
-    .work__wrapper {
-      .work__image {
-        transform: translateX(-1em);
-      }
-    }
-  }
-}
+// @media screen and (max-width: 576px) {
+//   .work__item {
+//     .work__wrapper {
+//       .work__image {
+//         transform: translateX(-1em);
+//       }
+//     }
+//   }
+// }
