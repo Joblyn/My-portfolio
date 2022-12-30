@@ -12,14 +12,20 @@
         />
       </figure>
     </div>
-    <h3 class="work__title">{{ title }}</h3>
-    <h4 class="work__tags">
-      <span v-for="tag in tags" :key="tag" class="work__tag">{{ tag }}</span>
-    </h4>
-    <p class="work__information">{{ information }}</p>
-    <button class="work__link" @click="handleMore">
-      More about this project
-    </button>
+    <article>
+      <div>
+        <h3 class="work__title">{{ title }}</h3>
+        <h4 class="work__tags">
+          <span v-for="tag in tags" :key="tag" class="work__tag">{{
+            tag
+          }}</span>
+        </h4>
+        <p class="work__information">{{ information }}</p>
+        <button class="work__link" @click="handleMore">
+          More about this project
+        </button>
+      </div>
+    </article>
   </div>
 </template>
 

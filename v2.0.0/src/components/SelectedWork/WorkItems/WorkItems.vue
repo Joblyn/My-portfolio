@@ -19,6 +19,7 @@ import { defineComponent } from "vue";
 
 import works from "@/fixtures/works";
 import WorkItem from "@/components/SelectedWork/WorkItem/WorkItem.vue";
+import "./style.scss";
 
 export default defineComponent({
   name: "WorkItems",
