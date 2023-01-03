@@ -45,26 +45,69 @@ export default function animateFixedNav() {
     });
   });
 
-  const work = document.querySelector("#selected-work") as HTMLElement;
-  const aboutMe = document.querySelector("#about-me") as HTMLElement;
-  const getInTouch = document.querySelector("#get-in-touch");
-  const articles = document.querySelector("#articles");
-
-  console.log("work", work.getBoundingClientRect().top);
   // update nav link style
-  const links = gsap.utils.toArray(".navigation__item");
-  const sections = gsap.utils.toArray("#main section");
+  // const links = gsap.utils.toArray<HTMLAnchorElement>(".navigation__item");
+  // const sections = gsap.utils.toArray<HTMLElement>("#main section");
 
-  links.forEach((btn: HTMLElement, index: number): void => {
-    btn.addEventListener("click", () => {
-      gsap.to("#main", {
-        duration: 1,
-        scrollTo: {
-          y: sections[index],
-          autoKill: true,
-          ease: "power2",
-        },
-      });
-    });
-  });
+  // links.forEach((btn: HTMLAnchorElement, index: number): void => {
+  //   btn.addEventListener("click", () => {
+  //     gsap.to("#main", {
+  //       duration: 1,
+  //       scrollTo: {
+  //         y: sections[index],
+  //         autoKill: true,
+  //       },
+  //       ease: "power2",
+  //     });
+
+  //     for (let i = 0; i < 4; i++) {
+  //       const prev = links;
+  //       if (prev[i].classList.contains("active")) {
+  //         prev[i].classList.remove("active");
+  //       }
+  //     }
+  //     btn.classList.add("active");
+  //   });
+  // });
+
+  // sections.forEach((section, i) => {
+  //   ScrollTrigger.create({
+  //     trigger: section,
+  //     scroller: "#main",
+  //     start: "top center",
+  //     end: "bottom center",
+  //     onToggle: (self) => {
+  //       self.isActive
+  //         ? links[i].classList.add("active")
+  //         : links[i].classList.remove("active");
+  //     },
+  //   });
+  // });
 }
+
+export const updateActiveLinkOnScroll = (
+  section: string,
+  updateActiveLink: (value: string) => void
+) => {
+  ScrollTrigger.create({
+    trigger: section,
+    scroller: "#main",
+    start: "top center",
+    end: "botton center",
+    onToggle: (self) => {
+      self.isActive && updateActiveLink(section);
+    },
+  });
+};
+
+export const scrollToSection = (url: string) => {
+  const section = document.querySelector(url) as HTMLElement;
+  gsap.to("#main", {
+    duration: 1,
+    scrollTo: {
+      y: section,
+      autoKill: true,
+    },
+    ease: "power2",
+  });
+};

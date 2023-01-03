@@ -12,12 +12,22 @@
             <li
               v-for="item in navItems"
               :key="item.name"
-              data-test="nav-item"
-              class="navigation__item"
+              data-test="nav-item-mobile"
+              :class="['navigation__item', active === item.url ? 'active' : '']"
             >
-              <router-link :to="item.url" class="navigation__link">
-                {{ item.name }}
-              </router-link>
+              <router-link
+                :to="item.url"
+                class="navigation__link"
+                v-if="item.type === 'external'"
+                >{{ item.name }}</router-link
+              >
+              <a
+                :href="item.url"
+                class="navigation__link"
+                v-else
+                @click="handleInternalNavigation(item.url)"
+                >{{ item.name }}</a
+              >
             </li>
           </ul>
         </div>
@@ -32,11 +42,21 @@
             v-for="item in navItems"
             :key="item.name"
             data-test="nav-item-mobile"
-            class="navigation__item"
+            :class="['navigation__item', active === item.url ? 'active' : '']"
           >
-            <router-link :to="item.url" class="navigation__link">{{
-              item.name
-            }}</router-link>
+            <router-link
+              :to="item.url"
+              class="navigation__link"
+              v-if="item.type === 'external'"
+              >{{ item.name }}</router-link
+            >
+            <a
+              :href="item.url"
+              class="navigation__link"
+              v-else
+              @click="handleInternalNavigation(item.url)"
+              >{{ item.name }}</a
+            >
           </li>
         </ul>
       </nav>
@@ -45,21 +65,32 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from "vue";
+import { defineComponent, onMounted, inject } from "vue";
 
 import * as ROUTES from "@/router/constants";
 import navItems from "@/fixtures/navItems";
 import "@/components/FixedNav/style.scss";
-import animateFixedNav from "@/components/FixedNav/animate.ts";
+import animateFixedNav, {
+  scrollToSection,
+} from "@/components/FixedNav/animate.ts";
 
 export default defineComponent({
   name: "FixedNav",
   setup() {
+    const { activeLink, updateActiveLink } = inject("active-link");
+
+    const handleInternalNavigation = (url) => {
+      scrollToSection(url);
+      updateActiveLink(url);
+    };
+
     onMounted(animateFixedNav);
 
     return {
+      active: activeLink,
       ROUTES,
       navItems,
+      handleInternalNavigation,
     };
   },
 });
