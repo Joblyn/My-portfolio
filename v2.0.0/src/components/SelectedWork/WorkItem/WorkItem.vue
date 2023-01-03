@@ -33,7 +33,6 @@
 import { defineComponent, PropType } from "vue";
 
 import { Tags } from "@/interfaces/work";
-import "@/components/SelectedWork/WorkItem/style.scss";
 
 export default defineComponent({
   name: "WorkItem",
@@ -78,3 +77,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style
+  scoped
+  src="@/components/SelectedWork/WorkItem/style.scss"
+  lang="scss"
+></style>

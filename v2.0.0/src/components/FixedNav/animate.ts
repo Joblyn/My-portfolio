@@ -4,11 +4,11 @@ import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
-ScrollTrigger.config({
-  autoRefreshEvents: "visibilitychange,DOMContentLoaded,load, resize",
+ScrollTrigger.defaults({
+  markers: true,
 });
 
-export default function animateFixedNav() {
+export default function animateFixedNav(isOpen: boolean) {
   const mm = gsap.matchMedia();
   mm.add("(max-width: 767px)", () => {
     const showAnim = gsap
@@ -23,66 +23,32 @@ export default function animateFixedNav() {
     let param: number, checkParam: number, triggered: boolean;
     const vw10 = window.innerHeight / 10;
 
-    ScrollTrigger.create({
-      start: "top top",
-      end: 99999,
-      onUpdate: (self) => {
-        if (self.direction === 1 && self.scroll() >= vw10) {
-          triggered = false;
-          param = self.scroll();
-          showAnim.reverse();
-        }
-
-        if (self.direction === -1 && !triggered) {
-          checkParam = self.scroll();
-
-          if (param - checkParam >= 1000 || self.progress === 0) {
-            showAnim.play();
-            triggered = true;
+    // fixed logo on mobile animation
+    if (isOpen) {
+      showAnim.pause();
+    } else {
+      ScrollTrigger.create({
+        start: "top top",
+        end: 99999,
+        onUpdate: ({ direction, scroll, progress }) => {
+          if (direction === 1 && scroll() >= vw10) {
+            triggered = false;
+            param = scroll();
+            showAnim.reverse();
           }
-        }
-      },
-    });
+
+          if (direction === -1 && !triggered) {
+            checkParam = scroll();
+
+            if (param - checkParam >= 1000 || progress === 0) {
+              showAnim.play();
+              triggered = true;
+            }
+          }
+        },
+      });
+    }
   });
-
-  // update nav link style
-  // const links = gsap.utils.toArray<HTMLAnchorElement>(".navigation__item");
-  // const sections = gsap.utils.toArray<HTMLElement>("#main section");
-
-  // links.forEach((btn: HTMLAnchorElement, index: number): void => {
-  //   btn.addEventListener("click", () => {
-  //     gsap.to("#main", {
-  //       duration: 1,
-  //       scrollTo: {
-  //         y: sections[index],
-  //         autoKill: true,
-  //       },
-  //       ease: "power2",
-  //     });
-
-  //     for (let i = 0; i < 4; i++) {
-  //       const prev = links;
-  //       if (prev[i].classList.contains("active")) {
-  //         prev[i].classList.remove("active");
-  //       }
-  //     }
-  //     btn.classList.add("active");
-  //   });
-  // });
-
-  // sections.forEach((section, i) => {
-  //   ScrollTrigger.create({
-  //     trigger: section,
-  //     scroller: "#main",
-  //     start: "top center",
-  //     end: "bottom center",
-  //     onToggle: (self) => {
-  //       self.isActive
-  //         ? links[i].classList.add("active")
-  //         : links[i].classList.remove("active");
-  //     },
-  //   });
-  // });
 }
 
 export const updateActiveLinkOnScroll = (
@@ -91,23 +57,21 @@ export const updateActiveLinkOnScroll = (
 ) => {
   ScrollTrigger.create({
     trigger: section,
-    scroller: "#main",
+    scroller: window,
     start: "top center",
-    end: "botton center",
-    onToggle: (self) => {
-      self.isActive && updateActiveLink(section);
+    end: "bottom center",
+    markers: true,
+    onToggle: ({ isActive }) => {
+      isActive ? updateActiveLink(section) : updateActiveLink("");
     },
   });
 };
 
 export const scrollToSection = (url: string) => {
-  const section = document.querySelector(url) as HTMLElement;
-  gsap.to("#main", {
-    duration: 1,
-    scrollTo: {
-      y: section,
-      autoKill: true,
-    },
+  gsap.to(window, {
+    duration: 1.5,
+    delay: 0.5,
+    scrollTo: url,
     ease: "power2",
   });
 };

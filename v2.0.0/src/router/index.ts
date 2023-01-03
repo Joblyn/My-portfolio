@@ -12,18 +12,19 @@ export const routes: Array<RouteRecordRaw> = [
     path: ROUTES.ARTICLES.path,
     name: ROUTES.ARTICLES.name,
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Articles.vue"),
+      import(/* webpackChunkName: "articles" */ "../views/Articles.vue"),
   },
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+  linkActiveClass: "active",
+  linkExactActiveClass: "exact-active",
   scrollBehavior() {
     return {
       top: 0,
       left: 0,
-      behavior: "smooth",
     };
   },
 });

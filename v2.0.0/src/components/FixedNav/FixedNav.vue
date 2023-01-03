@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- desktop navigation -->
     <div id="fixed-nav" class="fixed-nav">
       <nav class="w-full">
         <h1>
@@ -25,7 +26,7 @@
                 :href="item.url"
                 class="navigation__link"
                 v-else
-                @click="handleInternalNavigation(item.url)"
+                @click.prevent="handleInternalNavigation(item.url)"
                 >{{ item.name }}</a
               >
             </li>
@@ -34,8 +35,13 @@
       </nav>
     </div>
 
-    <div class="mobile-nav">
-      <div class="floating-logo" aria-labelledby="Floating logo"></div>
+    <!-- mobile navigation -->
+    <div class="mobile-nav" v-if="isOpen">
+      <div
+        class="floating-logo"
+        aria-labelledby="Floating logo"
+        @click="showMobileNav"
+      ></div>
       <nav aria-labelledby="mobile navigation" class="navigation">
         <ul class="navigation__list">
           <li
@@ -54,7 +60,7 @@
               :href="item.url"
               class="navigation__link"
               v-else
-              @click="handleInternalNavigation(item.url)"
+              @click.prevent="handleInternalNavigation(item.url)"
               >{{ item.name }}</a
             >
           </li>
@@ -65,33 +71,49 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, inject } from "vue";
+import { defineComponent, onMounted, inject, ref } from "vue";
+import { useRouter, useRoute } from "vue-router";
 
 import * as ROUTES from "@/router/constants";
 import navItems from "@/fixtures/navItems";
-import "@/components/FixedNav/style.scss";
 import animateFixedNav, {
   scrollToSection,
-} from "@/components/FixedNav/animate.ts";
+} from "@/components/FixedNav/animate";
+import { ActiveLinkContext } from "@/interfaces/nav";
 
 export default defineComponent({
   name: "FixedNav",
   setup() {
-    const { activeLink, updateActiveLink } = inject("active-link");
+    const $router = useRouter();
+    const $route = useRoute();
+
+    const { activeLink } = inject("active-link") as ActiveLinkContext;
+    const isOpen = ref<boolean>(false);
 
     const handleInternalNavigation = (url) => {
+      if ($route.path !== "/") {
+        $router.push({ path: "/", hash: url });
+      } else {
+        history.pushState({}, null, $route.path + url);
+      }
       scrollToSection(url);
-      updateActiveLink(url);
     };
 
-    onMounted(animateFixedNav);
+    const showMobileNav = () => {
+      isOpen.value = !isOpen.value;
+    };
+
+    onMounted(() => animateFixedNav(isOpen));
 
     return {
       active: activeLink,
       ROUTES,
       navItems,
       handleInternalNavigation,
+      showMobileNav,
     };
   },
 });
 </script>
+
+<style scoped src="@/components/FixedNav/style.scss" lang="scss"></style>

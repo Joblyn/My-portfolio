@@ -1,5 +1,5 @@
 <template>
-  <section id="selected-work" class="work section">
+  <section id="selected-work" class="work">
     <section-header>Selected Work</section-header>
     <work-items />
   </section>
@@ -8,10 +8,10 @@
 <script lang="ts">
 import { defineComponent, onMounted, inject } from "vue";
 
-import "@/components/SelectedWork/Work/style.scss";
 import SectionHeader from "@/components/Shared/SectionHeader/SectionHeader.vue";
 import WorkItems from "@/components/SelectedWork/WorkItems/WorkItems.vue";
-import { updateActiveLinkOnScroll } from "@/components/FixedNav/animate.ts";
+import { updateActiveLinkOnScroll } from "@/components/FixedNav/animate";
+import { ActiveLinkContext } from "@/interfaces/nav";
 
 export default defineComponent({
   name: "Work",
@@ -20,11 +20,17 @@ export default defineComponent({
     WorkItems,
   },
   setup() {
-    const { updateActiveLink } = inject("active-link");
+    const { updateActiveLink } = inject("active-link") as ActiveLinkContext;
 
     onMounted(() =>
-      updateActiveLinkOnScroll("selected-work", updateActiveLink)
+      updateActiveLinkOnScroll("#selected-work", updateActiveLink)
     );
   },
 });
 </script>
+
+<style
+  scoped
+  src="@/components/SelectedWork/Work/style.scss"
+  lang="scss"
+></style>

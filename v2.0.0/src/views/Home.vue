@@ -2,29 +2,25 @@
   <div id="home">
     <intro />
     <work />
-    <!-- <about-me /> -->
-    <!-- <get-in-touch /> -->
+    <about-me />
+    <get-in-touch />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, inject, onMounted } from "vue";
+import { defineComponent } from "vue";
 import Intro from "@/components/Intro/Intro.vue";
 import Work from "@/components/SelectedWork/Work/Work.vue";
+import AboutMe from "@/components/AboutMe/AboutMe.vue";
+import GetInTouch from "@/components/GetInTouch/GetInTouch.vue";
 
 export default defineComponent({
   name: "Home",
   components: {
     Intro,
     Work,
-  },
-  setup() {
-    const { activeLink, updateActiveLink } = inject("active-link");
-
-    return {
-      activeLink,
-      updateActiveLink,
-    };
+    AboutMe,
+    GetInTouch,
   },
 });
 </script>

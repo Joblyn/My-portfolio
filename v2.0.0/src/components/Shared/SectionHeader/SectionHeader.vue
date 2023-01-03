@@ -10,9 +10,13 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import "@/components/Shared/SectionHeader/style.scss";
-
 export default defineComponent({
   name: "SectionHeader",
 });
 </script>
+
+<style
+  scoped
+  src="@/components/Shared/SectionHeader/style.scss"
+  lang="scss"
+></style>

@@ -42,7 +42,6 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import "@/components/Intro/style.scss";
 import ActionButton from "../Shared/ActionButton/ActionButton.vue";
 
 export default defineComponent({
@@ -63,3 +62,5 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped src="@/components/Intro/style.scss" lang="scss"></style>

@@ -14,8 +14,6 @@
 import { defineComponent, reactive, AnchorHTMLAttributes } from "vue";
 import { RouterLinkProps } from "vue-router";
 
-import "@/components/Shared/ActionButton/style.scss";
-
 export default defineComponent({
   name: "ActionButton",
   inheritAttrs: false,
@@ -60,3 +58,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style
+  scoped
+  src="@/components/Shared/ActionButton/style.scss"
+  lang="scss"
+></style>

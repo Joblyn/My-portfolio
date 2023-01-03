@@ -41,7 +41,6 @@
 import { defineComponent, onMounted, ref } from "vue";
 import { gsap } from "gsap";
 
-import "@/components/Shared/Preloader/style.scss";
 import Logo from "@/components/Shared/Logo/Logo.vue";
 
 export default defineComponent({
@@ -118,3 +117,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style
+  scoped
+  src="@/components/Shared/Preloader/style.scss"
+  lang="scss"
+></style>
