@@ -16,12 +16,12 @@ module.exports = {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
     "vue/v-bind-style": 1,
-    "vue/multi-word-component-names": "off",
+    "vue/multi-word-component-names": 0,
     "vue/no-multiple-template-root": 0,
     "prettier/prettier": [
       "error",
       {
-        endOfLine: "auto",
+        endOfLine: "LF",
       },
     ],
   },

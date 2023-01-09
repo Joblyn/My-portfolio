@@ -90,11 +90,11 @@ export default defineComponent({
     const { activeLink } = inject("active-link") as ActiveLinkContext;
     const isOpen = ref<boolean>(false);
 
-    const handleInternalNavigation = (url) => {
+    const handleInternalNavigation = (url: string) => {
       if ($route.path !== "/") {
         $router.push({ path: "/", hash: url });
       } else {
-        history.pushState({}, null, $route.path + url);
+        history.pushState({}, "", $route.path + url);
       }
       scrollToSection(url);
     };
@@ -103,7 +103,7 @@ export default defineComponent({
       isOpen.value = !isOpen.value;
     };
 
-    onMounted(() => animateFixedNav(isOpen));
+    onMounted(() => animateFixedNav(isOpen.value));
 
     return {
       active: activeLink,

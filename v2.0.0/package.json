@@ -9,7 +9,8 @@
     "test:e2e": "vue-cli-service test:e2e",
     "test:watch": "jest -- --watch",
     "test:coverage": "vue-cli-service test:unit --coverage",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lint-fix": "vue-cli-service lint --fix"
   },
   "dependencies": {
     "autoprefixer": "^10",
