@@ -36,13 +36,13 @@
     </div>
 
     <!-- mobile navigation -->
-    <div class="mobile-nav" v-if="isOpen">
+    <div class="mobile-nav">
       <div
         class="floating-logo"
         aria-labelledby="Floating logo"
-        @click="showMobileNav"
+        @click="toggleMobileNav"
       ></div>
-      <nav aria-labelledby="mobile navigation" class="navigation">
+      <nav aria-labelledby="mobile navigation" class="navigation" v-if="isOpen">
         <ul class="navigation__list">
           <li
             v-for="item in navItems"
@@ -88,7 +88,7 @@ export default defineComponent({
     const $route = useRoute();
 
     const { activeLink } = inject("active-link") as ActiveLinkContext;
-    const isOpen = ref<boolean>(false);
+    const isOpen = ref(false);
 
     const handleInternalNavigation = (url: string) => {
       if ($route.path !== "/") {
@@ -99,18 +99,20 @@ export default defineComponent({
       scrollToSection(url);
     };
 
-    const showMobileNav = () => {
+    const toggleMobileNav = () => {
       isOpen.value = !isOpen.value;
+      document.body.style.overflowY = isOpen.value ? "hidden" : "auto";
     };
 
-    onMounted(() => animateFixedNav(isOpen.value));
+    onMounted(() => animateFixedNav());
 
     return {
       active: activeLink,
+      isOpen,
       ROUTES,
       navItems,
       handleInternalNavigation,
-      showMobileNav,
+      toggleMobileNav,
     };
   },
 });

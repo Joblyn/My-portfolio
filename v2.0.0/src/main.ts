@@ -8,7 +8,6 @@ import { ActiveLinkContext } from "@/interfaces/nav";
 
 const activeLink = ref<string>("");
 const updateActiveLink = (value: string): void => {
-  console.log("value", value);
   activeLink.value = value;
 };
 
