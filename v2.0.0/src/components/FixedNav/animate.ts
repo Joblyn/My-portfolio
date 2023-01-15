@@ -15,8 +15,8 @@ export default function animateFixedNav() {
       .from(".floating-logo", {
         y: 100,
         paused: true,
-        duration: 0.85,
-        ease: "sine.out",
+        duration: 0.5,
+        ease: "sine.in",
       })
       .progress(1);
 

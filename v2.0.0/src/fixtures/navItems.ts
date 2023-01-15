@@ -2,8 +2,8 @@ import { NavItem } from "@/interfaces/nav";
 
 const navItems: NavItem[] = [
   {
-    name: "Articles",
-    url: "/articles",
+    name: "Blog",
+    url: "/blogs",
     type: "external",
   },
   {

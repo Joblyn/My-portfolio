@@ -23,7 +23,7 @@ describe("FixedNav.vue", () => {
     const navItems = wrapper.findAll("[data-test='nav-item']");
     const navTexts = navItems.map((navItem) => navItem.text());
     expect(navTexts).toEqual([
-      "Articles",
+      "Blog",
       "Get in touch",
       "About me",
       "Selected Work",

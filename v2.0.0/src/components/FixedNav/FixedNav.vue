@@ -2,7 +2,7 @@
   <div>
     <!-- desktop navigation -->
     <div id="fixed-nav" class="fixed-nav">
-      <nav class="w-full">
+      <nav class="w-full" role="navigation">
         <h1>
           <router-link :to="ROUTES.HOME.path" class="logo" data-test="logo">
             Job Oaikhenah: Frontend Engineer
@@ -17,16 +17,16 @@
               :class="['navigation__item', active === item.url ? 'active' : '']"
             >
               <router-link
+                v-if="item.type === 'external'"
                 :to="item.url"
                 class="navigation__link"
-                v-if="item.type === 'external'"
                 >{{ item.name }}</router-link
               >
               <a
+                v-else
                 :href="item.url"
                 class="navigation__link"
-                v-else
-                @click.prevent="handleInternalNavigation(item.url)"
+                @click.prevent="handleNavigation(item)"
                 >{{ item.name }}</a
               >
             </li>
@@ -42,7 +42,11 @@
         aria-labelledby="Floating logo"
         @click="toggleMobileNav"
       ></div>
-      <nav aria-labelledby="mobile navigation" class="navigation" v-if="isOpen">
+      <nav
+        aria-labelledby="mobile navigation"
+        :class="{ navigation: true, isOpen }"
+        role="navigation"
+      >
         <ul class="navigation__list">
           <li
             v-for="item in navItems"
@@ -54,13 +58,14 @@
               :to="item.url"
               class="navigation__link"
               v-if="item.type === 'external'"
+              @click="handleNavigation(item)"
               >{{ item.name }}</router-link
             >
             <a
               :href="item.url"
               class="navigation__link"
               v-else
-              @click.prevent="handleInternalNavigation(item.url)"
+              @click.prevent="handleNavigation(item)"
               >{{ item.name }}</a
             >
           </li>
@@ -79,7 +84,7 @@ import navItems from "@/fixtures/navItems";
 import animateFixedNav, {
   scrollToSection,
 } from "@/components/FixedNav/animate";
-import { ActiveLinkContext } from "@/interfaces/nav";
+import { NavItem, ActiveLinkContext } from "@/interfaces/nav";
 
 export default defineComponent({
   name: "FixedNav",
@@ -90,13 +95,22 @@ export default defineComponent({
     const { activeLink } = inject("active-link") as ActiveLinkContext;
     const isOpen = ref(false);
 
-    const handleInternalNavigation = (url: string) => {
-      if ($route.path !== "/") {
-        $router.push({ path: "/", hash: url });
-      } else {
-        history.pushState({}, "", $route.path + url);
+    const handleNavigation = (item: NavItem) => {
+      const { url, type } = item;
+      isOpen.value &&
+        (() => {
+          isOpen.value = false;
+          document.body.style.overflowY = "auto";
+        })();
+
+      if (type === "internal") {
+        if ($route.path !== "/") {
+          $router.push({ path: "/", hash: url });
+        } else {
+          history.pushState({}, "", $route.path + url);
+        }
+        scrollToSection(url);
       }
-      scrollToSection(url);
     };
 
     const toggleMobileNav = () => {
@@ -111,7 +125,7 @@ export default defineComponent({
       isOpen,
       ROUTES,
       navItems,
-      handleInternalNavigation,
+      handleNavigation,
       toggleMobileNav,
     };
   },

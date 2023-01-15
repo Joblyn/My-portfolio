@@ -9,7 +9,8 @@
     background: #091619;
     padding: 0 1em;
     z-index: 20;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     &::-webkit-scrollbar {
       width: 0px;
@@ -67,7 +68,7 @@
           -ms-flex-align: center;
           align-items: center;
 
-          &.active * {
+          &.active *, &:has(> a.active) {
             color: #20bf55 !important;
           }
 
@@ -83,11 +84,6 @@
             font-feature-settings: "calt" 0;
             margin: 0 1em;
             transition: all 0.3s ease-out;
-
-            &.active,
-            &.exact-active {
-              color: #20bf55 !important;
-            }
 
             &:hover {
               color: #7ca7fe;
@@ -138,7 +134,7 @@
     }
 
     .navigation {
-      background: #091619;
+      background-color: #091619;
       position: fixed;
       height: 100vh;
       width: 100vw;
@@ -148,31 +144,58 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
+      transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      &.isOpen {
+       clip-path: polygon(100% -1%, 101% 101%, -1% 101%, -1% -1%);
+
+       .navigation__list {
+        .navigation__item {
+          @for $i from 1 through 4 {
+            &:nth-of-type(#{$i}) {
+              transform: scale(1) translateY(0px);
+            }
+          }
+        }
+       }
+      }
 
       .navigation__list {
         padding-left: 0;
         margin: 0;
         list-style-type: none;
-        display: -webkit-flex;
-        display: -ms-flexbox;
+        -webkit-display: flex;
+        -ms-display: flex;
         display: flex;
         flex-direction: column-reverse;
         -ms-flex-direction: column-reverse;
         align-items: flex-start;
+        -webkit-align-items: flex-start;
+        -ms-flex-direction: flex-start;
 
         .navigation__item {
-          display: -webkit-flex;
-          display: -ms-flexbox;
+          -webkit-display: flex;
+          -ms-display: flex;
           display: flex;
           -webkit-align-items: center;
           -ms-flex-align: center;
           align-items: center;
+          transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+
+          @for $i from 1 through 4 {
+            &:nth-of-type(#{$i}) {
+              transform: scale(0.8) translateY(-20px * $i);
+              transform-origin: 0px 0px;
+            }
+          }
+          
 
           :hover {
             color: #20bf55 !important;
           }
-
-          &.active {
+          
+          &.active, &:has(> a.active) {
             &::before {
               content: "";
               display: block;

@@ -9,10 +9,9 @@ export const routes: Array<RouteRecordRaw> = [
     component: HomeView,
   },
   {
-    path: ROUTES.ARTICLES.path,
-    name: ROUTES.ARTICLES.name,
-    component: () =>
-      import(/* webpackChunkName: "articles" */ "../views/Articles.vue"),
+    path: ROUTES.BLOG.path,
+    name: ROUTES.BLOG.name,
+    component: () => import(/* webpackChunkName: "blog" */ "../views/Blog.vue"),
   },
 ];
 

@@ -5,9 +5,9 @@ const HOME: RouteConfig = {
   name: "home",
 };
 
-const ARTICLES: RouteConfig = {
-  path: "/articles",
-  name: "articles",
+const BLOG: RouteConfig = {
+  path: "/blog",
+  name: "blog",
 };
 
-export { HOME, ARTICLES };
+export { HOME, BLOG };
