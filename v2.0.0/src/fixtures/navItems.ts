@@ -3,7 +3,7 @@ import { NavItem } from "@/interfaces/nav";
 const navItems: NavItem[] = [
   {
     name: "Blog",
-    url: "/blogs",
+    url: "/blog",
     type: "external",
   },
   {

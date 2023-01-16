@@ -1,25 +1,65 @@
-// import gsap from "gsap";
-
 const animateCursor = () => {
-  const cursor = document.querySelector("#cursor") as HTMLDivElement;
-  const cursorDot = document.querySelector("#cursorDot") as HTMLDivElement;
+  const cursor = document.querySelector(".cursor") as HTMLDivElement;
+  const cursorDot = document.querySelector(".cursorDot") as HTMLDivElement;
+  const links = document.querySelectorAll("a") as NodeListOf<HTMLAnchorElement>;
+  const buttons = document.querySelectorAll(
+    "button"
+  ) as NodeListOf<HTMLButtonElement>;
+  const workImages = document.querySelectorAll(
+    "figure.work__image"
+  ) as NodeListOf<HTMLElement>;
 
   const moveCursor = (e: MouseEvent): void => {
-    cursor.style.top = e.pageY + "px";
-    cursor.style.left = e.pageX + "px";
+    cursorDot.style.top = cursor.style.top = e.clientY + "px";
+    cursorDot.style.left = cursor.style.left = e.clientX + "px";
   };
 
-  document.addEventListener("mouseLeave", () => {
-    cursor.classList.remove("opacity-100");
-    cursor.classList.add("opacity-0");
+  Array.from(links).forEach((link) => {
+    link.addEventListener("mouseover", () => {
+      cursor.style.height = "60px";
+      cursor.style.width = "60px";
+    });
+    link.addEventListener("mouseleave", () => {
+      cursor.style.height = "30px";
+      cursor.style.width = "30px";
+    });
   });
 
-  document.addEventListener("mouseover", () => {
-    cursor.classList.remove("opacity-0");
-    cursor.classList.add("opacity-100");
+  Array.from(buttons).forEach((button) => {
+    button.addEventListener("mouseover", () => {
+      cursor.style.height = "60px";
+      cursor.style.width = "60px";
+    });
+    button.addEventListener("mouseleave", () => {
+      cursor.style.height = "30px";
+      cursor.style.width = "30px";
+    });
   });
 
-  window.addEventListener("mousemove", moveCursor);
+  Array.from(workImages).forEach((image) => {
+    image.addEventListener("mouseover", () => {
+      cursor.style.height = "60px";
+      cursor.style.width = "60px";
+      cursor.style.transform = "translate(-10px, -10px)";
+
+      cursorDot.style.width = "50px";
+      cursorDot.style.height = "50px";
+      cursorDot.style.transform = "translate(-5px, -5px)";
+      cursorDot.textContent = "drag";
+    });
+    image.addEventListener("mouseleave", () => {
+      cursor.style.height = "30px";
+      cursor.style.width = "30px";
+      cursor.style.transform = "translate(-50%, -50%)";
+
+      cursorDot.style.width = "5px";
+      cursorDot.style.height = "5px";
+      cursorDot.style.transform = "translate(-50%, -50%)";
+      cursorDot.textContent = null;
+    });
+  });
+
+  document.addEventListener("mousemove", moveCursor);
 };
 
 export default animateCursor;

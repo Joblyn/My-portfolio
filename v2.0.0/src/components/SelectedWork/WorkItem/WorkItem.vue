@@ -30,9 +30,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
+import { defineComponent, PropType, onMounted } from "vue";
 
 import { Tags } from "@/interfaces/work";
+import animateCursor from "@/components/Shared/Cursor/animate";
 
 export default defineComponent({
   name: "WorkItem",
@@ -68,8 +69,10 @@ export default defineComponent({
   },
   setup() {
     const handleMore = () => {
-      console.log("clicked");
+      // console.log("clicked");
     };
+
+    onMounted(animateCursor);
 
     return {
       handleMore,

@@ -1,0 +1,37 @@
+.cursor {
+  position: fixed;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #a2825d;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 30;
+  transition: all .2s ease-in-out .12s;
+  transition-property: width, height, transform;
+
+  ~ .cursorDot {
+    height: 5px;
+    width: 5px;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    background-color: #20bf55;
+    border-radius: 50%;
+    border: none; 
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "sans-serif";
+    font-weight: bold;
+    font-size: 11px;
+    color: #ffffff;
+    transition: all .2s ease-in-out;
+    transition-property: width, height, transform;
+  }
+}
