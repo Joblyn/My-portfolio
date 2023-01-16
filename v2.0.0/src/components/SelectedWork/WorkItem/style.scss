@@ -1,9 +1,5 @@
 .work__item {
-  // width: 100%;
   width: calc(100% - (2 * 1em));
-  // margin-left: 1em;
-  // margin-right: 1em;
-  // margin-bottom: 6em;
   scroll-snap-align: start;
 
   .work__wrapper {
@@ -12,12 +8,8 @@
 
     .work__image {
       margin: 0;
-      // position: absolute;
       width: calc(100vw - 6em);
-      // left: calc(50%);
       height: 100%;
-      // -webkit-transform: translateX(-50%);
-      // transform: translateX(-50%);
       transform: translateX(-6em);
       overflow-x: auto;
       cursor: grab;
@@ -95,9 +87,12 @@
     font-family: "Codec", Arial, "Helvetica Neue", Helvetica, sans-serif;
     text-transform: uppercase;
     color: #4985fe;
-    -webkit-transform: color 0.3s ease-out;
-    transform: color 0.3s ease-out;
+    -webkit-transition: color 0.3s ease-out;
+    transition: color 0.3s ease-out;
     cursor: pointer;
+    display: flex;
+    align-content: center;
+    margin-top: 2em;
 
     &::after {
       content: "";
