@@ -20,7 +20,7 @@
             tag
           }}</span>
         </h4>
-        <p class="work__information">{{ information }}</p>
+        <p class="work__information">{{ info }}</p>
         <button class="work__link" @click="handleMore">
           More about this project
         </button>
@@ -34,6 +34,7 @@ import { defineComponent, PropType, onMounted } from "vue";
 
 import { Tags } from "@/interfaces/work";
 import animateCursor from "@/components/Shared/Cursor/animate";
+import { enableDrag } from "@/components/SelectedWork/WorkItem/animate";
 
 export default defineComponent({
   name: "WorkItem",
@@ -62,7 +63,7 @@ export default defineComponent({
       type: Array as PropType<Tags>,
       required: true,
     },
-    information: {
+    info: {
       type: String,
       required: true,
     },
@@ -72,7 +73,10 @@ export default defineComponent({
       // console.log("clicked");
     };
 
-    onMounted(animateCursor);
+    onMounted(() => {
+      enableDrag();
+      animateCursor();
+    });
 
     return {
       handleMore,

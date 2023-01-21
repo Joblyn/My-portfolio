@@ -4,8 +4,7 @@ const works: Work[] = [
   {
     id: "tnnafrica",
     title: "TNNAfrica",
-    information:
-      "Doctor-Patient health care web application for TNNAfrica. It includes document sharing, appointment booking, and video call sessions.",
+    info: "Doctor-Patient health care web application for TNNAfrica. It includes document sharing, appointment booking, and video call sessions.",
     article: [
       "Doctor-Patient health care web application for TNNAfrica. It includes document sharing, appointment booking, and video call sessions.",
       "Collaborated with a team of developers and designers, working as the frontend engineer. Built the frontend of the application using ReactJS, Redux state management, consuming RESTAPIs for backend communication. Video call sessions were built using WebRTC.",
@@ -47,8 +46,7 @@ const works: Work[] = [
   {
     id: "cv-builder",
     title: "CV Builder",
-    information:
-      "A simple CV builder web app built with ReactJs and Firebase. It allows users to create a CV quickly by filling a set of forms. Users can save their progress and continue creating their CV later.",
+    info: "A simple CV builder web app built with ReactJs and Firebase. It allows users to create a CV quickly by filling a set of forms. Users can save their progress and continue creating their CV later.",
     article: [
       "A simple CV builder web app built with ReactJs and Firebase. It allows users to create a CV quickly by filling a set of forms. Users can save their progress and continue creating their CV later.",
       " Users can preview CV while creating it and download it as a PDF file. They can also edit a CV after building it.",
@@ -86,8 +84,7 @@ const works: Work[] = [
   {
     id: "netflix",
     title: "Netflix Clone",
-    information:
-      "A clone of netflix official web app, built with ReactJS, Firebase, and GSAP library. A user is able to authenticate into his account, view a catalogue of movies and series and watch a simple video.",
+    info: "A clone of netflix official web app, built with ReactJS, Firebase, and GSAP library. A user is able to authenticate into his account, view a catalogue of movies and series and watch a simple video.",
     article: [
       "A clone of netflix official web app, built with ReactJS, Firebase, and GSAP library. A user is able to authenticate into his account, view a catalogue of movies and series and watch a simple video.",
       "It was built with React Context API, Redux state management library, and Firestore database.",
@@ -129,8 +126,7 @@ const works: Work[] = [
   {
     id: "wgh-reseller-site",
     title: "Whogohost Reseller Center",
-    information:
-      "Unique, dynamic, reseller site auto generated for individual resellers of Whogohost, a web hosting company. Website's data is auto generated according to the reseller's domain.",
+    info: "Unique, dynamic, reseller site auto generated for individual resellers of Whogohost, a web hosting company. Website's data is auto generated according to the reseller's domain.",
     article: [
       "Unique, dynamic, reseller site auto generated for individual resellers of Whogohost, a web hosting company. Website's data is auto generated according to the reseller's domain.",
       "Users are able to search for a domain name, register a domain name, and manage their domains on the clientarea. They can also manage their hosting accounts, and view (and download) their invoices. Buil with ReactJS, Redux and RESTAPIs. Payment integration was done using Paystack and Flutterwave.",
@@ -177,8 +173,7 @@ const works: Work[] = [
   {
     id: "resell-wgh",
     title: "Whogohost Reseller Landing Page",
-    information:
-      "Beautiful, aesthetic, fully responsive landing page for Whogohost resellers, capturing brand identitiy and elegance.",
+    info: "Beautiful, aesthetic, fully responsive landing page for Whogohost resellers, capturing brand identitiy and elegance.",
     article: [
       "Beautiful, aesthetic, fully responsive landing page for Whogohost resellers, capturing brand identitiy and elegance.",
       "Developed with HTML, CSS, JavaScript and jquery.",
@@ -215,8 +210,7 @@ const works: Work[] = [
   {
     id: "exowem",
     title: "Exowem",
-    information:
-      "Web application for traing bitcoin and giftcards, built with ReactJS.",
+    info: "Web application for traing bitcoin and giftcards, built with ReactJS.",
     article: [
       "Beautiful, aesthetic web application for trading of bitcoin and gitcards, with selective dark theme.",
       "Developed with TailwindCSS and ReactJS.",

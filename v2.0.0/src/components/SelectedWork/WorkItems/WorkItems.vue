@@ -9,7 +9,7 @@
       :width="work.width"
       :height="work.height"
       :tags="work.tags"
-      :information="work.information"
+      :info="work.info"
     />
   </div>
 </template>

@@ -9,7 +9,7 @@ type Tags = string[];
 interface Work {
   id: string;
   title: string;
-  information: string;
+  info: string;
   article: string[];
   banner: string;
   height: number;
