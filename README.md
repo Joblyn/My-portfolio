@@ -1,9 +1,10 @@
-# My Portfolio (v1.0.0)
+# My Portfolio v2.0.0
 
-https://joblyn.tech
-## Versions 
-- [v2.0.0](v2.0.0/)
-- [v1.0.0](v1.0.0/)
-
-#
-![](v1.0.0/assets/joblynv1.png)
+## Technology Stack
+- VueJS
+- Typescript
+- Prettier
+- Jest
+- Cypress
+- TailwindCSS
+- SASS
