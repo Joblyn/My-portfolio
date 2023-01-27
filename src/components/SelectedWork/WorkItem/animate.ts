@@ -7,15 +7,17 @@ export const enableDrag = () => {
   const targetRect = document
     .querySelector(".work__image img")
     ?.getBoundingClientRect() as DOMRect;
-  const date = new Date();
-  const friction = 9.8;
+  // const date = new Date();
+  const friction = 5;
   let initRect: DOMRect,
     endRect: DOMRect,
     velocity: number,
     startTime: number,
     endTime: number,
+    tt: number,
     dist: number,
-    direction: "left" | "right";
+    direction: "left" | "right",
+    oldLeft: number;
 
   Draggable.create(".work__image img", {
     type: "x",
@@ -23,25 +25,31 @@ export const enableDrag = () => {
     lockAxis: true,
     allowNativeTouchScrolling: true,
     onDragStart: function () {
-      startTime = date.getTime();
+      startTime = new Date().getTime();
       initRect = this.target.getBoundingClientRect();
     },
     onDrag: function () {
-      // update direction every 500ms on move
-      const { left: oldLeft } = this.target.getBoundingClientRect();
-      setInterval(() => {
-        const { left: newLeft } = this.target.getBoundingClientRect();
+      const { left: newLeft } = this.target.getBoundingClientRect();
+      if (oldLeft) {
+        console.log("oldleft", oldLeft);
+        console.log("newleft", newLeft);
         direction = newLeft < oldLeft ? "left" : "right";
-      }, 500);
-
-      // direction = currRect.left < initRect.left => left
-      //             currRect.left > initRect.left => right
+        console.log("direction", direction);
+      }
+      oldLeft = newLeft;
     },
     onDragEnd: function () {
-      endTime = date.getTime();
+      console.log("drag end");
+      endTime = new Date().getTime();
       endRect = this.target.getBoundingClientRect();
       dist = Math.abs(Math.abs(endRect.left) - Math.abs(initRect.left));
-      velocity = dist / ((endTime - startTime) / 60);
+      console.log("distance travelled", `${dist} px`);
+      console.log("startTime", startTime);
+      console.log("endTime", endTime);
+      tt = (endTime - startTime) / 1000;
+      console.log("time taken", `${tt} + "s"`);
+      velocity = dist / tt;
+      console.log("velocity", `${velocity} px/s`);
 
       // if left is greater than initial left, snap back to position;
       const exceededPosLeft = targetRect.left < endRect.left ? true : false;
@@ -64,7 +72,7 @@ export const enableDrag = () => {
     gsap.to(target, {
       x,
       duration: 0.3,
-      ease: "Power2.easOut",
+      ease: "power2.easeOut",
     });
   };
 
@@ -76,12 +84,26 @@ export const enableDrag = () => {
     // (Math.abs(currRect.left + targetRect.left + snapDist)(-ve)
     // direction = right => snap to greater x => currRect.left + targetRect.left + snapDist
     const vx = velocity / (2 * friction);
-    const vt = (dist / velocity) * ((endTime - startTime) / 60);
+    const x = (() => {
+      let postion, willExceed: boolean;
+      if (direction === "left") {
+        willExceed = endRect.left - vx > window.innerWidth;
+        postion =
+          endRect.left - vx > endRect.width - window.innerWidth
+            ? endRect.width - window.innerWidth
+            : endRect.left - vx;
+      } else {
+        // postion = endRect.left + vx > targetRect.left ? : 
+      }
+      // const postion = direction === "left" ? endRect.left - vx : endRect.left + vx;
+    })();
+    const vt = (dist / velocity) * tt;
+    console.log("{vx, x, vt}", { x, vx, vt });
 
     gsap.to(target, {
-      x: vx,
-      duration: vt,
-      ease: "power1.out",
+      x,
+      duration: 0.3,
+      ease: "power2.easeOut",
     });
 
     // s = ut - (1/2)gt^2
