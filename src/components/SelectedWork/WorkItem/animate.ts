@@ -7,8 +7,9 @@ export const enableDrag = () => {
   const targetRect = document
     .querySelector(".work__image img")
     ?.getBoundingClientRect() as DOMRect;
-  // const date = new Date();
-  const friction = 5;
+
+  console.log("targetRect.left", targetRect.left);
+  const friction = 9.8;
   let initRect: DOMRect,
     endRect: DOMRect,
     velocity: number,
@@ -31,8 +32,6 @@ export const enableDrag = () => {
     onDrag: function () {
       const { left: newLeft } = this.target.getBoundingClientRect();
       if (oldLeft) {
-        console.log("oldleft", oldLeft);
-        console.log("newleft", newLeft);
         direction = newLeft < oldLeft ? "left" : "right";
         console.log("direction", direction);
       }
@@ -53,7 +52,10 @@ export const enableDrag = () => {
 
       // if left is greater than initial left, snap back to position;
       const exceededPosLeft = targetRect.left < endRect.left ? true : false;
-      if (exceededPosLeft) snapToPosition(this.target, 0);
+      console.log("exceededPosLeft", exceededPosLeft);
+      if (exceededPosLeft) {
+        return snapToPosition(this.target, 0);
+      }
 
       const initRight = endRect.width - targetRect.left;
       const totalDist =
@@ -62,7 +64,12 @@ export const enableDrag = () => {
       // if right is less than initial right, snap back to position;
       const exceededPosRight =
         totalDist > initRight ? endRect.width - window.innerWidth : false;
-      if (exceededPosRight) snapToPosition(this.target, `-${exceededPosRight}`);
+      console.log("totalDist", totalDist);
+      console.log("initRight", initRight);
+      console.log("exceededPosRight", exceededPosRight);
+      if (exceededPosRight) {
+        return snapToPosition(this.target, `-${exceededPosRight}`);
+      }
 
       slowDown(this.target);
     },
@@ -77,25 +84,35 @@ export const enableDrag = () => {
   };
 
   const slowDown = (target: HTMLElement) => {
-    // distToStop => dist; speed (d/t); friction;
-    // velocity => direction of speed
-    // currRect.left(-v)
-    // direction = left => snap to less x => dist
-    // (Math.abs(currRect.left + targetRect.left + snapDist)(-ve)
-    // direction = right => snap to greater x => currRect.left + targetRect.left + snapDist
+    console.log("slowingdown");
     const vx = velocity / (2 * friction);
     const x = (() => {
-      let postion, willExceed: boolean;
+      let position;
       if (direction === "left") {
-        willExceed = endRect.left - vx > window.innerWidth;
-        postion =
-          endRect.left - vx > endRect.width - window.innerWidth
+        console.log("vx", vx);
+        console.log("targetRect.left", targetRect.left);
+        console.log("endRect.left", endRect.left);
+        console.log("endRect.left - vx", endRect.left - vx);
+        console.log(
+          "endRect.width + targetRect.left - window.innerWidth",
+          endRect.width + targetRect.left - window.innerWidth
+        );
+        // willExceed = endRect.left - vx > endRect.width - targetRect.left;
+        position =
+          endRect.left - vx >
+          endRect.width + targetRect.left - window.innerWidth
             ? endRect.width - window.innerWidth
-            : endRect.left - vx;
-      } else {
-        // postion = endRect.left + vx > targetRect.left ? : 
+            : endRect.left - vx - targetRect.left;
+        console.log("position", position);
       }
-      // const postion = direction === "left" ? endRect.left - vx : endRect.left + vx;
+      if (direction === "right") {
+        console.log("endRect.left", endRect.left);
+        console.log("vx", vx);
+        console.log("endRect.left + vx", endRect.left + vx);
+        console.log("targetRect.left", targetRect.left);
+        position = endRect.left + vx >= targetRect.left ? 0 : endRect.left + vx;
+      }
+      return position;
     })();
     const vt = (dist / velocity) * tt;
     console.log("{vx, x, vt}", { x, vx, vt });
