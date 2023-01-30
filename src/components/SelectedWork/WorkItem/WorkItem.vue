@@ -1,7 +1,7 @@
 <template>
   <div class="work__item">
     <div class="work__wrapper">
-      <figure class="work__image">
+      <figure class="work__image" :ref="draggable">
         <img
           class="lazy loaded"
           :data-src="banner"

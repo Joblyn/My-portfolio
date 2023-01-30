@@ -4,13 +4,12 @@ import Draggable from "gsap/Draggable";
 gsap.registerPlugin(Draggable);
 
 export const enableDrag = () => {
-  const targetRect = document
-    .querySelector(".work__image img")
-    ?.getBoundingClientRect() as DOMRect;
-
-  const friction = 5;
+  const friction = 7;
   const duration = 0.6;
-  let initRect: DOMRect,
+  let targetRect: DOMRect = document
+      .querySelector(".work__image img")
+      ?.getBoundingClientRect() as DOMRect,
+    initRect: DOMRect,
     endRect: DOMRect,
     velocity: number,
     startTime: number,
@@ -19,6 +18,15 @@ export const enableDrag = () => {
     dist: number,
     direction: "left" | "right",
     oldLeft: number;
+
+  window.addEventListener("resize", () => {
+    targetRect = document
+      .querySelector(".work__image img")
+      ?.getBoundingClientRect() as DOMRect;
+    gsap.set(".work__image img", {
+      x: 0,
+    });
+  });
 
   Draggable.create(".work__image img", {
     type: "x",
@@ -45,9 +53,7 @@ export const enableDrag = () => {
 
       // if left is greater than initial left, snap back to position;
       const exceededPosLeft = targetRect.left < endRect.left ? true : false;
-      if (exceededPosLeft) {
-        return snapToPosition(this.target, 0);
-      }
+      if (exceededPosLeft) snapToPosition(this.target, 0);
 
       const initRight = endRect.width - targetRect.left;
       const totalDist =
@@ -56,9 +62,7 @@ export const enableDrag = () => {
       // if right is less than initial right, snap back to position;
       const exceededPosRight =
         totalDist > initRight ? endRect.width - window.innerWidth : false;
-      if (exceededPosRight) {
-        return snapToPosition(this.target, `-${exceededPosRight}`);
-      }
+      if (exceededPosRight) snapToPosition(this.target, `-${exceededPosRight}`);
 
       slowDown(this.target);
     },
@@ -93,8 +97,5 @@ export const enableDrag = () => {
       duration,
       ease: "power2.easeOut",
     });
-
-    // s = ut - (1/2)gt^2
-    // v^2 = u^2 - 2gs => s = (u^2 - v^2)/2g
   };
 };
