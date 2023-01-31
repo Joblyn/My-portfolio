@@ -76,6 +76,8 @@
   }
 
   .work__link {
+    font-family: "Codec", Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1rem;
     font-variant-ligatures: no-common-ligatures;
     font-feature-settings: "calt" 0;
     background: none;
@@ -85,12 +87,10 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    font-family: "Codec", Arial, "Helvetica Neue", Helvetica, sans-serif;
     text-transform: uppercase;
     color: #4985fe;
     -webkit-transition: color 0.3s ease-out;
     transition: color 0.3s ease-out;
-    cursor: pointer;
     display: flex;
     align-content: center;
     margin-top: 2em;

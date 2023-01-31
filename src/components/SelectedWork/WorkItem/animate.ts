@@ -5,7 +5,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(Draggable, ScrollTrigger);
 
 export const animateWorkItem = (figureRef: HTMLElement) => {
-  const friction = 7;
+  const friction = 20;
   const duration = 0.6;
   let targetRect: DOMRect = document
       .querySelector(".work__image img")
@@ -61,7 +61,6 @@ export const animateWorkItem = (figureRef: HTMLElement) => {
 
   const snapToPosition = (target: HTMLElement, x: number | string) => {
     gsap.to(target, {
-      y: 0,
       x,
       duration,
       ease: "power2.easeOut",
@@ -85,7 +84,6 @@ export const animateWorkItem = (figureRef: HTMLElement) => {
     })();
 
     gsap.to(target, {
-      y: 0,
       x,
       duration,
       ease: "power2.easeOut",
@@ -114,7 +112,6 @@ export const animateWorkItem = (figureRef: HTMLElement) => {
         trigger: figureRef,
         start: "top 92%",
         toggleActions: "play none none reverse",
-        markers: true,
       },
     }
   );
