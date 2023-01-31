@@ -4,10 +4,6 @@ import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
-ScrollTrigger.defaults({
-  markers: true,
-});
-
 export default function animateFixedNav() {
   const mm = gsap.matchMedia();
   mm.add("(max-width: 767px)", () => {
@@ -55,7 +51,6 @@ export const updateActiveLinkOnScroll = (
     scroller: window,
     start: "top center",
     end: "bottom center",
-    markers: true,
     onToggle: ({ isActive }) => {
       isActive ? updateActiveLink(section) : updateActiveLink("");
     },

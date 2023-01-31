@@ -210,7 +210,7 @@ const works: Work[] = [
   {
     id: "exowem",
     title: "Exowem",
-    info: "Web application for traing bitcoin and giftcards, built with ReactJS.",
+    info: "Web application for trading bitcoin and giftcards, built with ReactJS.",
     article: [
       "Beautiful, aesthetic web application for trading of bitcoin and gitcards, with selective dark theme.",
       "Developed with TailwindCSS and ReactJS.",

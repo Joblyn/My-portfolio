@@ -13,11 +13,12 @@
       transform: translateX(-6em);
       overflow-x: auto;
       cursor: grab;
-
+      overflow-y: hidden;
+      
       &::-webkit-scrollbar {
         width: 0;
       }
-
+      
       img {
         padding: 0 5em;
         height: 100%;

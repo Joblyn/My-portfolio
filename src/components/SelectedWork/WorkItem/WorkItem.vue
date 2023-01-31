@@ -1,7 +1,7 @@
 <template>
   <div class="work__item">
     <div class="work__wrapper">
-      <figure class="work__image" :ref="draggable">
+      <figure class="work__image" ref="figureRef">
         <img
           class="lazy loaded"
           :data-src="banner"
@@ -9,6 +9,7 @@
           :src="require(`@/assets/images/works/${id}/${banner}`)"
           :width="width"
           :height="height"
+          loading="lazy"
         />
       </figure>
     </div>
@@ -30,11 +31,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, onMounted } from "vue";
+import { defineComponent, PropType, onMounted, ref } from "vue";
 
 import { Tags } from "@/interfaces/work";
 import animateCursor from "@/components/Shared/Cursor/animate";
-import { enableDrag } from "@/components/SelectedWork/WorkItem/animate";
+import { animateWorkItem } from "@/components/SelectedWork/WorkItem/animate";
 
 export default defineComponent({
   name: "WorkItem",
@@ -72,14 +73,18 @@ export default defineComponent({
     const handleMore = () => {
       // console.log("clicked");
     };
+    const figureRef = ref(null);
 
     onMounted(() => {
-      enableDrag();
+      if (figureRef.value) {
+        animateWorkItem(figureRef.value);
+      }
       animateCursor();
     });
 
     return {
       handleMore,
+      figureRef,
     };
   },
 });

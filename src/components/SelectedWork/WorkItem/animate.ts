@@ -1,9 +1,10 @@
 import gsap from "gsap";
 import Draggable from "gsap/Draggable";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(Draggable);
+gsap.registerPlugin(Draggable, ScrollTrigger);
 
-export const enableDrag = () => {
+export const animateWorkItem = (figureRef: HTMLElement) => {
   const friction = 7;
   const duration = 0.6;
   let targetRect: DOMRect = document
@@ -19,18 +20,8 @@ export const enableDrag = () => {
     direction: "left" | "right",
     oldLeft: number;
 
-  window.addEventListener("resize", () => {
-    targetRect = document
-      .querySelector(".work__image img")
-      ?.getBoundingClientRect() as DOMRect;
-    gsap.set(".work__image img", {
-      x: 0,
-    });
-  });
-
   Draggable.create(".work__image img", {
     type: "x",
-    edgeResistance: 0.65,
     lockAxis: true,
     allowNativeTouchScrolling: true,
     onDragStart: function () {
@@ -70,6 +61,7 @@ export const enableDrag = () => {
 
   const snapToPosition = (target: HTMLElement, x: number | string) => {
     gsap.to(target, {
+      y: 0,
       x,
       duration,
       ease: "power2.easeOut",
@@ -93,9 +85,37 @@ export const enableDrag = () => {
     })();
 
     gsap.to(target, {
+      y: 0,
       x,
       duration,
       ease: "power2.easeOut",
     });
   };
+
+  window.addEventListener("resize", () => {
+    targetRect = document
+      .querySelector(".work__image img")
+      ?.getBoundingClientRect() as DOMRect;
+  });
+
+  // reveal on scroll
+  gsap.fromTo(
+    figureRef,
+    {
+      opacity: 0,
+      y: 100,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.85,
+      ease: "SlowMo.easeIn",
+      scrollTrigger: {
+        trigger: figureRef,
+        start: "top 92%",
+        toggleActions: "play none none reverse",
+        markers: true,
+      },
+    }
+  );
 };

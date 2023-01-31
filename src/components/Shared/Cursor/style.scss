@@ -9,7 +9,7 @@
   left: 0;
   pointer-events: none;
   z-index: 30;
-  transition: all .2s ease-in-out .12s;
+  transition: all 0.2s ease-in-out 0.12s;
   transition-property: width, height, transform;
 
   ~ .cursorDot {
@@ -19,7 +19,7 @@
     transform: translate(-50%, -50%);
     background-color: #20bf55;
     border-radius: 50%;
-    border: none; 
+    border: none;
     top: 0;
     left: 0;
     pointer-events: none;
@@ -31,7 +31,16 @@
     font-weight: bold;
     font-size: 11px;
     color: #ffffff;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     transition-property: width, height, transform;
+  }
+
+}
+@media screen and (max-width: 992px) {
+  .cursor {
+    display: none;
+    ~ .cursorDot {
+      display: none;
+    }
   }
 }
