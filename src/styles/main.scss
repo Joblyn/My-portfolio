@@ -98,6 +98,14 @@
     align-items: stretch;
     padding-top: 6em;
     position: relative;
+    
+    header {
+      h2 {
+        counter-increment: section;
+        font-size: 2.667em;
+        text-transform: uppercase;
+      }
+    }
   }
 
   figure {
@@ -116,6 +124,12 @@
     .section {
       width: calc(100% - 2em);
       padding-top: 3em;
+
+      header {
+        h2 {
+          font-size: 2em;
+        }
+      }
     }
   }
 }
