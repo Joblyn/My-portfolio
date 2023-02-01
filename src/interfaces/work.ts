@@ -11,6 +11,7 @@ interface Work {
   title: string;
   info: string;
   article: string[];
+  paragraphs: string[];
   banner: string;
   height: number;
   width: number;

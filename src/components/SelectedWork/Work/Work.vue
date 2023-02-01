@@ -2,6 +2,7 @@
   <section id="selected-work" class="work">
     <section-header>Selected Work</section-header>
     <work-items />
+    <work-modal />
   </section>
 </template>
 
@@ -10,6 +11,7 @@ import { defineComponent, onMounted, inject } from "vue";
 
 import SectionHeader from "@/components/Shared/SectionHeader/SectionHeader.vue";
 import WorkItems from "@/components/SelectedWork/WorkItems/WorkItems.vue";
+import WorkModal from "@/components/SelectedWork/WorkModal/WorkModal.vue";
 import { updateActiveLinkOnScroll } from "@/components/FixedNav/animate";
 import { ActiveLinkContext } from "@/interfaces/nav";
 
@@ -18,6 +20,7 @@ export default defineComponent({
   components: {
     SectionHeader,
     WorkItems,
+    WorkModal,
   },
   setup() {
     const { updateActiveLink } = inject("active-link") as ActiveLinkContext;

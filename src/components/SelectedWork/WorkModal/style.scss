@@ -5,7 +5,7 @@
   width: 100%;
   height: 100%;
   background: #20bf55;
-  transform: translateX(-100%);
+  // transform: translateX(-100%); // animate this
   z-index: 20;
   overflow: hidden;
 
@@ -38,7 +38,7 @@
   .work_modal_content {
     position: absolute;
     z-index: 1;
-    opacity: 1; // change here
+    opacity: 1; // change this; animate this
     height: 100%;
     width: 100%;
     background: #091619;
@@ -56,7 +56,9 @@
       justify-content: flex-start;
       align-items: stretch;
 
-      header, section {
+      header,
+      section {
+        padding: 0;
         width: calc(100% - (2 * 1em));
         margin-left: 1em;
         margin-right: 1em;
@@ -72,11 +74,22 @@
         letter-spacing: -2px;
       }
 
-      header h3, section h3 {
+      header h3,
+      section h3 {
         font-size: 1.2em;
         text-transform: uppercase;
         color: #20bf55;
         margin: 0;
+      }
+
+      section img {
+        display: block;
+        margin: 3em 0;
+        position: relative;
+        left: 50%;
+        max-height: 80vh;
+        transform: translateX(-50%);
+        max-width: calc(100% + 16em);
       }
     }
   }
@@ -92,9 +105,10 @@
   .work_modal {
     .work_modal_content {
       .wrapper {
-        header, section {
+        header,
+        section {
           margin-left: calc(((100% / 12) * 3) + 1em);
-          width: calc(((100% / 12) * 6) - (1em *2))
+          width: calc(((100% / 12) * 6) - (1em * 2));
         }
       }
     }
@@ -117,9 +131,15 @@
           padding-right: 1em;
         }
 
-        header h3, section h3 {
+        header h3,
+        section h3 {
           font-size: 1em;
           padding-right: 2em;
+        }
+
+        section img {
+          max-width: 100%;
+          margin: 1em 0;
         }
       }
     }
@@ -130,7 +150,7 @@
   .work_modal {
     .work_modal_content {
       .wrapper {
-        header, 
+        header,
         section {
           margin-left: calc(((100% / 12) * 2) + 1em);
           width: calc(((100% / 12) * 8) - (1em * 2));

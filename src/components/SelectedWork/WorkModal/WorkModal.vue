@@ -14,35 +14,43 @@
     <div class="work_modal_content" aria-describedby="modal content">
       <div class="wrapper">
         <header>
-          <h2>TNNAfrica</h2>
-          <h3>ReactJS Redux RESTAPI WebRTC</h3>
+          <h2>{{ work.title }}</h2>
+          <h3>
+            {{ work.tags.join(" ") }}
+          </h3>
         </header>
         <section>
           <div>
-            <p>
-              I am a huge board game fan and collector. And, as a UX designer
-              and game designer, I’d been thinking for a while now that I could
-              put all these passions together into creating digital board games.
-            </p>
-            <p>
-              I've made this game using Vue.js for the front end (with PWA
-              support) and Firebase to manage the real-time updates and did all
-              the UI and art direction for it.
+            <p v-for="(paragraph, id) in work.paragraphs" :key="id">
+              {{ paragraph }}
             </p>
             <p>
               You can check this project live on:
               <a
-                href="http://www.tnnafrica.com"
+                :href="'https://' + work.live"
                 target="_blank"
                 rel="noopener noreferrer"
-                >www.tnnafrica.com</a
+                >{{ work.live }}</a
+              >
+            </p>
+            <p v-if="work.github">
+              You can check the source code of this project on
+              <a
+                :href="'https://' + work.github"
+                target="_blank"
+                rel="noopener noreferrer"
+                >{{ work.github }}</a
               >
             </p>
             <p>
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
+              <img
+                v-for="(page, id) in work.pages"
+                :key="id"
+                :src="require(`@/assets/images/works/${work.id}/${page.src}`)"
+                :alt="page.alt"
+                loading="lazy"
+                decoding="async"
+              />
             </p>
           </div>
         </section>
@@ -53,8 +61,20 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import works from "@/fixtures/works";
 
 export default defineComponent({
   name: "WorkModal",
+  setup() {
+    return {
+      work: works[0],
+    };
+  },
 });
 </script>
+
+<style
+  scope
+  src="@/components/SelectedWork/WorkModal/style.scss"
+  lang="scss"
+></style>
