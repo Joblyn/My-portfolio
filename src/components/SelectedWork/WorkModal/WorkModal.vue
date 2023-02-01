@@ -1,7 +1,14 @@
 <template>
   <div class="work_modal">
-    <button class="close_modal_button" role="button">
-      <span class="sr-only" aria-describedby="close modal button"
+    <button
+      :class="['close_modal_button', isOpen ? 'open' : '']"
+      role="button"
+      @click="toggleModal"
+    >
+      <span
+        class="sr-only"
+        aria-describedby="close modal button"
+        @click="$emit(updateModal, false)"
         >Close modal</span
       >
       <svg viewBox="0 0 24 24">
@@ -11,7 +18,10 @@
       </svg>
     </button>
 
-    <div class="work_modal_content" aria-describedby="modal content">
+    <div
+      :class="['work_modal_content', isOpen ? 'loaded' : '']"
+      aria-describedby="modal content"
+    >
       <div class="wrapper">
         <header>
           <h2>{{ work.title }}</h2>
@@ -62,9 +72,20 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import works from "@/fixtures/works";
+import { Work } from "@/interfaces/work";
 
 export default defineComponent({
   name: "WorkModal",
+  props: {
+    isOpen: {
+      type: Boolean,
+      required: true,
+    },
+    // work: {
+    //   type: [Work, null],
+    // },
+  },
+
   setup() {
     return {
       work: works[0],

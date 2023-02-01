@@ -23,7 +23,11 @@
           }}</span>
         </h4>
         <p class="work__information">{{ info }}</p>
-        <button role="button" class="work__link" @click="handleMore">
+        <button
+          role="button"
+          class="work__link"
+          @click="$emit(updateModal, true, work)"
+        >
           More about this project
         </button>
       </div>

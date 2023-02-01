@@ -23,7 +23,7 @@ export const animateWorkItem = (figureRef: HTMLElement) => {
   Draggable.create(".work__image img", {
     type: "x",
     lockAxis: true,
-    allowNativeTouchScrolling: true,
+    // allowNativeTouchScrolling: true,
     onDragStart: function () {
       startTime = new Date().getTime();
       initRect = this.target.getBoundingClientRect();
@@ -106,11 +106,11 @@ export const animateWorkItem = (figureRef: HTMLElement) => {
     {
       opacity: 1,
       y: 0,
-      duration: 0.85,
+      duration: 0.75,
       ease: "SlowMo.easeIn",
       scrollTrigger: {
         trigger: figureRef,
-        start: "top 92%",
+        start: "top 95%",
         toggleActions: "play none none reverse",
       },
     }
