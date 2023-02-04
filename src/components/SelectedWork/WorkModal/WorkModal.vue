@@ -1,14 +1,11 @@
 <template>
-  <div class="work_modal">
+  <div :class="['work_modal', isOpen ? 'open' : '']">
     <button
-      :class="['close_modal_button', isOpen ? 'open' : '']"
+      class="close_modal_button"
       role="button"
-      @click="toggleModal"
+      @click="$emit('updateModal', false, null)"
     >
-      <span
-        class="sr-only"
-        aria-describedby="close modal button"
-        @click="$emit(updateModal, false)"
+      <span class="sr-only" aria-describedby="close modal button"
         >Close modal</span
       >
       <svg viewBox="0 0 24 24">
@@ -22,7 +19,7 @@
       :class="['work_modal_content', isOpen ? 'loaded' : '']"
       aria-describedby="modal content"
     >
-      <div class="wrapper">
+      <div class="wrapper" v-if="isOpen">
         <header>
           <h2>{{ work.title }}</h2>
           <h3>
@@ -58,6 +55,7 @@
                 :key="id"
                 :src="require(`@/assets/images/works/${work.id}/${page.src}`)"
                 :alt="page.alt"
+                :fetchpriority="id === 0 ? 'high' : 'low'"
                 loading="lazy"
                 decoding="async"
               />
@@ -70,8 +68,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import works from "@/fixtures/works";
+import { defineComponent, PropType, Ref } from "vue";
 import { Work } from "@/interfaces/work";
 
 export default defineComponent({
@@ -81,21 +78,15 @@ export default defineComponent({
       type: Boolean,
       required: true,
     },
-    // work: {
-    //   type: [Work, null],
-    // },
-  },
-
-  setup() {
-    return {
-      work: works[0],
-    };
+    work: {
+      type: Object as PropType<Ref<Work | null>>,
+    },
   },
 });
 </script>
 
 <style
-  scope
+  scoped
   src="@/components/SelectedWork/WorkModal/style.scss"
   lang="scss"
 ></style>

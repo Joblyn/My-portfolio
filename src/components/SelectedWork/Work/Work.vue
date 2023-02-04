@@ -12,12 +12,14 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, inject, ref } from "vue";
+import type { Ref } from "vue";
 
 import SectionHeader from "@/components/Shared/SectionHeader/SectionHeader.vue";
 import WorkItems from "@/components/SelectedWork/WorkItems/WorkItems.vue";
 import WorkModal from "@/components/SelectedWork/WorkModal/WorkModal.vue";
 import { updateActiveLinkOnScroll } from "@/components/FixedNav/animate";
 import { ActiveLinkContext } from "@/interfaces/nav";
+import { Work } from "@/interfaces/work";
 
 export default defineComponent({
   name: "Work",
@@ -29,14 +31,15 @@ export default defineComponent({
   setup() {
     const { updateActiveLink } = inject("active-link") as ActiveLinkContext;
 
-    const activeWork = ref(null);
-    const isOpen = ref(false);
+    const isOpen: Ref<boolean> = ref(false);
+    const activeWork: Ref<Work | null> = ref(null);
 
-    const updateModal = (value: boolean, work = null) => {
+    const updateModal = (value: boolean, work: Work | null) => {
+      console.log("work", work);
       isOpen.value = value;
-      if (work) {
-        activeWork.value = work;
-      }
+      activeWork.value = work;
+      console.log("isOpen", isOpen);
+      console.log("activework", activeWork.value);
     };
 
     onMounted(() =>
@@ -45,6 +48,7 @@ export default defineComponent({
 
     return {
       isOpen,
+      activeWork,
       updateModal,
     };
   },

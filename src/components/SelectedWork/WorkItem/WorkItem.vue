@@ -23,11 +23,7 @@
           }}</span>
         </h4>
         <p class="work__information">{{ info }}</p>
-        <button
-          role="button"
-          class="work__link"
-          @click="$emit(updateModal, true, work)"
-        >
+        <button role="button" class="work__link" @click="openModal">
           More about this project
         </button>
       </div>
@@ -73,22 +69,22 @@ export default defineComponent({
       type: String,
       required: true,
     },
+    openModal: {
+      type: Function,
+      required: true,
+    },
   },
   setup() {
-    const handleMore = () => {
-      // console.log("clicked");
-    };
     const figureRef = ref(null);
 
     onMounted(() => {
+      animateCursor();
       if (figureRef.value) {
         animateWorkItem(figureRef.value);
       }
-      animateCursor();
     });
 
     return {
-      handleMore,
       figureRef,
     };
   },
