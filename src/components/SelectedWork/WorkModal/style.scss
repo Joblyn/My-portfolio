@@ -5,13 +5,50 @@
   width: 100%;
   height: 100%;
   background: #20bf55;
-  transform: translateX(-100%);
+  transform: translate(0%, 100%);
   z-index: 20;
   overflow: hidden;
 
   &.open {
-    transform: translateX(0);
+    transform-origin: center center;
+    transform: translate(0);
     // animate here
+    animation: reveal 1s cubic-bezier(0.175, 0.885, 0.32, 1.25) forwards;
+  }
+
+  &.closing {
+    animation: closing 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.25) forwards;
+  }
+
+  @keyframes reveal {
+    0% {
+      top: 0;
+      transform: scale(1) translate(0%, 100%);
+    }
+    90% {
+      top: 50%;
+      transform: scale(0.9) translate(0, -50%);
+    }
+    100% {
+      top: 0;
+      transform: scale(1) translate(0);
+    }
+  }
+
+  @keyframes closing {
+    0% {
+      top: 0;
+      transform: scale(1) translate(0, 0);
+    }
+    50% {
+      transform: translate(-50%, 20%);
+      height: 40%;
+      width: 70%;
+      left: 50%;
+    }
+    100% {
+      transform: translate(0, 100%);
+    }
   }
 
   .close_modal_button {

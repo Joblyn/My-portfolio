@@ -1,10 +1,6 @@
 <template>
-  <div :class="['work_modal', isOpen ? 'open' : '']">
-    <button
-      class="close_modal_button"
-      role="button"
-      @click="$emit('updateModal', false, null)"
-    >
+  <div :class="[workModalClass, { open: isOpen, closing }]">
+    <button class="close_modal_button" role="button" @click="onClose">
       <span class="sr-only" aria-describedby="close modal button"
         >Close modal</span
       >
@@ -68,7 +64,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, Ref } from "vue";
+import { defineComponent, PropType, Ref, ref, watch } from "vue";
 import { Work } from "@/interfaces/work";
 
 export default defineComponent({
@@ -81,6 +77,32 @@ export default defineComponent({
     work: {
       type: Object as PropType<Ref<Work | null>>,
     },
+  },
+  setup(props, { emit }) {
+    const closing = ref(false);
+
+    const workModalClass = ref({
+      work_modal: true,
+    });
+
+    const onClose = () => {
+      emit("updateModal", false, null);
+      closing.value = true;
+    };
+
+    watch(closing, (prevValue, currentValue) => {
+      if (prevValue === true && currentValue === false) {
+        setTimeout(() => {
+          closing.value = false;
+        }, 1000);
+      }
+    });
+
+    return {
+      workModalClass,
+      closing,
+      onClose,
+    };
   },
 });
 </script>
