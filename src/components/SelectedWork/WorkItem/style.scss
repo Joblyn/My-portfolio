@@ -14,11 +14,11 @@
       overflow-x: auto;
       cursor: grab;
       overflow-y: hidden;
-      
+
       &::-webkit-scrollbar {
         width: 0;
       }
-      
+
       img {
         padding: 0 5em;
         height: 100%;
@@ -36,8 +36,6 @@
     justify-content: flex-start;
     align-items: stretch;
     width: calc(100% + (2 * 1em));
-    margin-left: -1em;
-    margin-right: -1em;
     * {
       flex: 0 1 auto;
     }

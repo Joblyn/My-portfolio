@@ -1,5 +1,5 @@
 <template>
-  <section id="selected-work" class="work">
+  <section id="selected-work" class="work_section">
     <section-header>Selected Work</section-header>
     <work-items @update-modal="updateModal" />
     <work-modal

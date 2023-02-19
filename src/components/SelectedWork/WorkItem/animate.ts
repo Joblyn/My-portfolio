@@ -106,11 +106,11 @@ export const animateWorkItem = (figureRef: HTMLElement) => {
     {
       opacity: 1,
       y: 0,
-      duration: 0.65,
+      duration: 0.5,
       ease: "SlowMo.easeIn",
       scrollTrigger: {
         trigger: figureRef,
-        start: "top 97%",
+        start: "top 98%",
         toggleActions: "play none none reverse",
       },
     }

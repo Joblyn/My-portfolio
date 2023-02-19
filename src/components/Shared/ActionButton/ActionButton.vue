@@ -1,5 +1,5 @@
 <template>
-  <a v-if="type === 'link'" :href="href" :class="classes">
+  <a v-if="type === 'link'" :href="href" :class="classes" :download="download">
     <slot></slot>
   </a>
   <button v-else-if="type === 'button'" :class="classes" @click="onClick">
@@ -21,6 +21,11 @@ export default defineComponent({
     type: {
       type: String,
       default: "link",
+      required: false,
+    },
+    download: {
+      type: String,
+      default: "",
       required: false,
     },
     classType: {

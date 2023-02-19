@@ -1,5 +1,5 @@
 <template>
-  <section id="get-in-touch" class="get-in-touch"></section>
+  <section id="get-in-touch" class="get_in_touch_section"></section>
 </template>
 
 <script lang="ts">

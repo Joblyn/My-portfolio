@@ -3,7 +3,8 @@
     <h2 class="section__title">
       <slot></slot>
     </h2>
-    <slot name="extra"></slot>
+    <slot name="paragraph"></slot>
+    <slot name="action"></slot>
   </header>
 </template>
 
