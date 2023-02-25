@@ -100,7 +100,7 @@ export const animateWorkItem = (figureRef: HTMLElement) => {
   gsap.fromTo(
     figureRef,
     {
-      opacity: 0,
+      opacity: 1,
       y: 100,
     },
     {
@@ -110,7 +110,7 @@ export const animateWorkItem = (figureRef: HTMLElement) => {
       ease: "SlowMo.easeIn",
       scrollTrigger: {
         trigger: figureRef,
-        start: "top 98%",
+        start: "top 99%",
         toggleActions: "play none none reverse",
       },
     }
