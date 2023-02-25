@@ -22,7 +22,7 @@
     </section-header>
 
     <figure>
-      <span>
+      <span class="about-me-portrait">
         <img
           :src="require(`@/assets/images/job.jpg`)"
           width="808px"
@@ -37,8 +37,9 @@
     <article class="highlights">
       <div>
         <highlight
-          v-for="(highlight, id) in Highlights"
-          :key="id"
+          v-for="highlight in Highlights"
+          :key="highlight.id"
+          :id="highlight.id"
           :icon="highlight.icon"
           :name="highlight.name"
           :article="highlight.article"
@@ -57,6 +58,7 @@ import SectionHeader from "@/components/Shared/SectionHeader/SectionHeader.vue";
 import ActionButton from "@/components/Shared/ActionButton/ActionButton.vue";
 import Highlight from "@/components/AboutMe/Highlight/Highlight.vue";
 import Highlights from "@/fixtures/highlights";
+import animate from "@/components/AboutMe/animate";
 
 export default defineComponent({
   name: "AboutMe",
@@ -70,6 +72,7 @@ export default defineComponent({
 
     onMounted(() => {
       updateActiveLinkOnScroll("#about-me", updateActiveLink);
+      animate();
     });
 
     return {

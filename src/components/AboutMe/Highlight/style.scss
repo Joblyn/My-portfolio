@@ -88,3 +88,15 @@
     }
   }
 }
+
+@media screen and (max-width: 739px) {
+  .about_me_section {
+    .highlights {
+      > div {
+        > span {
+          width: calc(((100% / 6) * 3) - (1em * 2));
+        }
+      }
+    }
+  }
+}
