@@ -5,7 +5,7 @@
   >
     <div
       id="top"
-      class="h-1/2 absolute top-0 left-0 w-screen bg-brand-green-dark"
+      class="h-[calc(50%+0.25rem)] absolute top-0 left-0 w-screen bg-brand-green-dark"
     ></div>
     <div
       id="logo"
@@ -32,7 +32,7 @@
     </div>
     <div
       id="bottom"
-      class="h-1/2 absolute bottom-0 left-0 w-screen bg-brand-green-dark"
+      class="h-[calc(50%+0.25rem)] absolute -bottom-1 left-0 w-screen bg-brand-green-dark"
     ></div>
   </div>
 </template>
