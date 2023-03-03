@@ -1,5 +1,8 @@
 <template>
-  <section id="get-in-touch" class="get_in_touch_section"></section>
+  <section id="get-in-touch" class="get_in_touch_section">
+    <section-header>
+      Get In Touch
+  </section-header>
 </template>
 
 <script lang="ts">
