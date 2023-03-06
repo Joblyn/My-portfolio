@@ -1,7 +1,7 @@
 <template>
   <section id="about-me" class="about_me_section">
     <section-header>
-      About Me 
+      About Me
       <template #paragraph>
         <p>
           Front-end enineer and UX specialist, I have 3 years of experience
