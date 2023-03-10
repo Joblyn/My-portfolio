@@ -78,6 +78,17 @@
                 />
               </a>
             </span>
+            <span class="social">
+              <a
+                class="social_icon"
+                href="https://dev.to/joblyn/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="sr-only">Dev</span>
+                <img :src="require(`@/assets/logos/dev.svg`)" alt="Instagram" />
+              </a>
+            </span>
           </div>
         </aside>
         <div class="contact__form">
