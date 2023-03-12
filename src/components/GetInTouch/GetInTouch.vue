@@ -25,8 +25,22 @@
             hit me up on the social networks below:
           </p>
           <div>
-            <span class="social">
-              <a
+            <span class="social" v-for="social in socials" :key="social.name">
+              <action-button
+                type="link"
+                :href="social.link"
+                class="social_icon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="sr-only">{{ social.name }}</span>
+                <img
+                  :src="require(`@/assets/logos/${social.icon}`)"
+                  :alt="social.alt"
+                />
+              </action-button>
+            </span>
+            <!-- <a
                 class="social_icon"
                 href="https://twitter.com/Joblyn/"
                 target="_blank"
@@ -37,9 +51,8 @@
                   :src="require(`@/assets/logos/twitter.svg`)"
                   alt="twitter"
                 />
-              </a>
-            </span>
-            <span class="social">
+              </a> -->
+            <!-- <span class="social">
               <a
                 class="social_icon"
                 href="https://github.com/Joblyn/"
@@ -71,14 +84,14 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span class="sr-only">Instagram</span>
+                <span class="sr-only">Medium</span>
                 <img
                   :src="require(`@/assets/logos/medium.svg`)"
                   alt="Instagram"
                 />
               </a>
-            </span>
-            <span class="social">
+            </span> -->
+            <!-- <span class="social">
               <a
                 class="social_icon"
                 href="https://dev.to/joblyn/"
@@ -88,7 +101,7 @@
                 <span class="sr-only">Dev</span>
                 <img :src="require(`@/assets/logos/dev.svg`)" alt="Instagram" />
               </a>
-            </span>
+            </span> -->
           </div>
         </aside>
         <div class="contact__form">
@@ -136,11 +149,14 @@ import { defineComponent, onMounted, inject } from "vue";
 import { updateActiveLinkOnScroll } from "@/components/FixedNav/animate";
 import { ActiveLinkContext } from "@/interfaces/nav";
 import SectionHeader from "@/components/Shared/SectionHeader/SectionHeader.vue";
+import ActionButton from "@/components/Shared/ActionButton/ActionButton.vue";
+import socials from "@/fixtures/socials";
 
 export default defineComponent({
   name: "GetInTouch",
   components: {
     SectionHeader,
+    ActionButton,
   },
   setup() {
     const { updateActiveLink } = inject("active-link") as ActiveLinkContext;
@@ -148,6 +164,10 @@ export default defineComponent({
     onMounted(() => {
       updateActiveLinkOnScroll("#get-in-touch", updateActiveLink);
     });
+
+    return {
+      socials,
+    };
   },
 });
 </script>

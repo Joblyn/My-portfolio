@@ -1,3 +1,122 @@
 .get-in-touch {
-  height: 40vh;
+  > div {
+    width: calc(100% - (2 * 1em));
+    margin-left: 1em;
+    margin-right: 1em;
+
+    article {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-items: stretch;
+      width: calc(100% + (2 * 1em));
+      margin-left: -1em;
+      margin-right: -1em;
+
+      > * {
+        flex: 0 1 auto;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        margin: 0 0 0.5em;
+        font-size: 1em;
+        letter-spacing: 1px;
+      }
+      > div {
+        &:first-child {
+          width: calc(100% - (2 * 1em));
+          margin-left: 1em;
+          margin-right: 1em;
+          padding: 2em 0;
+        }
+
+        > a {
+          font-family: Codec, Arial, Helvetica Neue, Helvetica, sans-serif;
+          font-size: 2em;
+          text-transform: uppercase;
+          line-height: 1;
+          display: block;
+          max-width: -moz-fit-content;
+          max-width: fit-content;
+          color: #20bf55;
+
+          &:last-child {
+            font-size: 1.5em;
+            color: #199342;
+          }
+        }
+      }
+
+      article {
+        aside {
+          width: calc(100% - (2 * 1em));
+          margin-left: 1em;
+          margin-right: 1em;
+        }
+      }
+    }
+
+    .contact__form {
+      width: calc(100% - (2 * 1em));
+      margin-left: 1em;
+      margin-right: 1em;
+      padding-top: 1em;
+      position: relative;
+
+      > span {
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .get-in-touch {
+    > div {
+      article {
+        > div {
+          &:first-child {
+            margin-left: calc(((100% / 12) * 1) + 1em);
+            width: calc(((100% / 12) * 10) - (1em * 2));
+          }
+        }
+
+        > aside {
+          margin-left: calc(((100% / 12) * 1) + 1em);
+          width: calc(((100% / 12) * 5) - (1em * 2));
+
+          > div {
+            display: flex;
+            gap: 1em;
+
+            a {
+              aspect-ratio: 1;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+      }
+
+      .contact__form {
+        width: calc(((100% / 12) * 5) - (1em * 2));
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 739px) {
+  .get-in-touch {
+    > div {
+      article {
+        > div {
+          > a {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
 }
