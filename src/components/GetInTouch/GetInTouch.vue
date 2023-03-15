@@ -40,68 +40,6 @@
                 />
               </action-button>
             </span>
-            <!-- <a
-                class="social_icon"
-                href="https://twitter.com/Joblyn/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span class="sr-only">Twitter</span>
-                <img
-                  :src="require(`@/assets/logos/twitter.svg`)"
-                  alt="twitter"
-                />
-              </a> -->
-            <!-- <span class="social">
-              <a
-                class="social_icon"
-                href="https://github.com/Joblyn/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span class="sr-only">Github</span>
-                <img :src="require(`@/assets/logos/github.svg`)" alt="github" />
-              </a>
-            </span>
-            <span class="social">
-              <a
-                class="social_icon"
-                href="https://www.linkedin.com/in/job-oaikhenah-5056111a1/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span class="sr-only">LinkedIn</span>
-                <img
-                  :src="require(`@/assets/logos/linkedin.svg`)"
-                  alt="LinkedIn"
-                />
-              </a>
-            </span>
-            <span class="social">
-              <a
-                class="social_icon"
-                href="https://instagram.com/joblyn/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span class="sr-only">Medium</span>
-                <img
-                  :src="require(`@/assets/logos/medium.svg`)"
-                  alt="Instagram"
-                />
-              </a>
-            </span> -->
-            <!-- <span class="social">
-              <a
-                class="social_icon"
-                href="https://dev.to/joblyn/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span class="sr-only">Dev</span>
-                <img :src="require(`@/assets/logos/dev.svg`)" alt="Instagram" />
-              </a>
-            </span> -->
           </div>
         </aside>
         <div class="contact__form">
