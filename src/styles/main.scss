@@ -12,14 +12,20 @@
   font-family: "Codec";
   src: url("../assets/fonts/codec/Codec-Cold-ExtraBold-trial.ttf")
     format("truetype");
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 @font-face {
   font-family: "Gilroy";
   src: url("../assets/fonts/Gilroy/Gilroy-ExtraBold.otf") format("opentype");
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 @font-face {
   font-family: "Bitter";
   src: url("../assets/fonts/bitter/BitterPro-Regular.ttf") format("truetype");
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @layer base {
@@ -35,6 +41,8 @@
     counter-reset: section;
     color: #f4f4f8;
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
     @apply bg-brand-green-dark max-w-full overflow-x-hidden;
 
