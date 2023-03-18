@@ -100,11 +100,11 @@ export const animateWorkItem = (figureRef: HTMLElement) => {
   gsap.fromTo(
     figureRef,
     {
-      // opacity: 1,
-      y: 100,
+      opacity: 0,
+      y: 50,
     },
     {
-      // opacity: 1,
+      opacity: 1,
       y: 0,
       duration: 0.5,
       ease: "SlowMo.easeIn",

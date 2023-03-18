@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: [
-        "bitter",
+        // "bitter",
         "Cambria",
         "Georgia",
         "serif",

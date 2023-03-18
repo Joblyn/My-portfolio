@@ -1,0 +1,61 @@
+.footer__section {
+  > div {
+    width: calc(100% - (2 * 1em));
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-bottom: 5em;
+
+    > div {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: stretch;
+      width: 100%;
+      width: calc(100% + (2 * 1em));
+      margin-left: -1em;
+      margin-right: -1em;
+      font-size: 0.9em;
+
+      > * {
+        flex: 0 1 auto;
+      }
+
+      > div {
+        width: calc(100% - (2 * 1em));
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+    }
+  }
+
+  figure {
+    width: calc(100% - (2 * 1em));
+    margin-left: 1em;
+    margin-right: 1em;
+
+    > img {
+      width: 5em;
+      transform: translateX(-1em);
+    }
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .footer__section {
+    > div {
+      width: calc(((100% / 12) * 10) - (1em * 2));
+      margin-left: calc(((100% / 12) * 1) + 1em);
+
+      > div {
+        > div {
+          width: calc(((100% / 12) * 5) - (1em * 2));
+        }
+      }
+    }
+
+    figure {
+      margin-left: calc(((100% / 12) * 1) + 1em);
+      width: calc(((100% / 12) * 1) - (1em * 2));
+    }
+  }
+}

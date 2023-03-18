@@ -1,11 +1,26 @@
 <template>
-  <a v-if="type === 'link'" :href="href" :class="classes" :download="download">
+  <a
+    v-if="btnType === 'link'"
+    :href="href"
+    :class="classes"
+    :download="download"
+  >
     <slot></slot>
   </a>
-  <button v-else-if="type === 'button'" :class="classes" @click="onClick">
+  <button
+    v-else-if="btnType === 'button'"
+    :class="classes"
+    @click="onClick"
+    :type="type"
+    :form="form"
+  >
     <slot></slot>
   </button>
-  <router-link v-else-if="type === 'router-link'" :to="route" :class="classes">
+  <router-link
+    v-else-if="btnType === 'router-link'"
+    :to="route"
+    :class="classes"
+  >
     <slot></slot>
   </router-link>
 </template>
@@ -18,7 +33,7 @@ export default defineComponent({
   name: "ActionButton",
   inheritAttrs: false,
   props: {
-    type: {
+    btnType: {
       type: String,
       default: "link",
       required: false,
@@ -40,6 +55,14 @@ export default defineComponent({
     header: {
       type: Boolean,
       default: false,
+      required: false,
+    },
+    type: {
+      type: String,
+      required: false,
+    },
+    form: {
+      type: String,
       required: false,
     },
   },

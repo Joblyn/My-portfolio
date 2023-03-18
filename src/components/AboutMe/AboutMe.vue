@@ -12,7 +12,7 @@
       </template>
       <template #action>
         <action-button
-          type="link"
+          btnType="link"
           href="/docs/Job_Oaikhenah_CV.pdf"
           download="Job Oaikhenah's resumé"
         >

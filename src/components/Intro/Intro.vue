@@ -28,7 +28,7 @@
           well-suited use cases, optimising performance and aesthetics.
         </p>
         <action-button
-          type="button"
+          btnType="button"
           :header="true"
           data-test="header-button"
           :onClick="scrollToWork"

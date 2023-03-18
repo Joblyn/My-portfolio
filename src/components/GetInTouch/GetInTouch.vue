@@ -10,10 +10,12 @@
             href="mailto:oaikhenahjob@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
+            id="my_email"
             >oaikhenahjob@gmail.com</a
           >
-          <a href="tel:+2348136767175">+2348136767175</a>
+          <a href="tel:+2348136767175" id="my_phone">+2348136767175</a>
         </div>
+
         <aside>
           <p>
             Nice to meet you! If you want to keep in touch, send me a message
@@ -27,7 +29,7 @@
           <div>
             <span class="social" v-for="social in socials" :key="social.name">
               <action-button
-                type="link"
+                btnType="link"
                 :href="social.link"
                 class="social_icon"
                 target="_blank"
@@ -42,6 +44,7 @@
             </span>
           </div>
         </aside>
+
         <div class="contact__form">
           <span>
             <form id="contact__form">
@@ -65,14 +68,18 @@
               </div>
 
               <div>
-                <button form="contact__form">
+                <action-button
+                  btnType="button"
+                  type="submit"
+                  form="contact__form"
+                >
                   <span>Let's talk</span>
                   <div>
                     <svg viewBox="0 0 80 80">
                       <rect x="8" y="8" width="64" height="64"></rect>
                     </svg>
                   </div>
-                </button>
+                </action-button>
               </div>
             </form>
           </span>
@@ -89,6 +96,7 @@ import { ActiveLinkContext } from "@/interfaces/nav";
 import SectionHeader from "@/components/Shared/SectionHeader/SectionHeader.vue";
 import ActionButton from "@/components/Shared/ActionButton/ActionButton.vue";
 import socials from "@/fixtures/socials";
+import animate from "@/components/GetInTouch/animate";
 
 export default defineComponent({
   name: "GetInTouch",
@@ -101,6 +109,7 @@ export default defineComponent({
 
     onMounted(() => {
       updateActiveLinkOnScroll("#get-in-touch", updateActiveLink);
+      animate();
     });
 
     return {
