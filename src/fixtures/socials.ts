@@ -1,10 +1,5 @@
 import { Social } from "@/interfaces/social";
 
-// name: string;
-// icon: string;
-// alt: string;
-// link: string;
-
 const socials: Social[] = [
   {
     name: "Twitter",
@@ -25,11 +20,17 @@ const socials: Social[] = [
     link: "https://www.linkedin.com/in/job-oaikhenah-5056111a1/",
   },
   {
-    name: "Medium",
-    icon: "medium.svg",
-    alt: "medium blog",
-    link: "https://medium.com/@oaikhenahjob",
+    name: "Instagram",
+    icon: "instagram.svg",
+    alt: "instagram",
+    link: "https://www.instagram.com/_joblyn_/",
   },
+  // {
+  //   name: "Medium",
+  //   icon: "medium.svg",
+  //   alt: "medium blog",
+  //   link: "https://medium.com/@oaikhenahjob",
+  // },
   {
     name: "Dev",
     icon: "dev.svg",

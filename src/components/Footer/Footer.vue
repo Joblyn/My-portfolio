@@ -4,11 +4,11 @@
     <div>
       <div>
         <div>
+          <p>Thanks for visiting.</p>
           <p>
             Inspired by
             <a href="https://aleixo.me/" target="_blank">Aleixo.me</a>
           </p>
-          <p>Thanks for visiting.</p>
         </div>
         <figure>
           <img alt="My logo" :src="require(`@/assets/images/logo.svg`)" />
