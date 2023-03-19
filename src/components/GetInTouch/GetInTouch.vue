@@ -33,7 +33,6 @@
                 :href="social.link"
                 class="social_icon"
                 target="_blank"
-                rel="noopener noreferrer"
               >
                 <span class="sr-only">{{ social.name }}</span>
                 <img

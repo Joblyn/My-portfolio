@@ -3,6 +3,7 @@
     v-if="btnType === 'link'"
     :href="href"
     :class="classes"
+    :target="target"
     :download="download"
   >
     <slot></slot>
@@ -41,6 +42,10 @@ export default defineComponent({
     download: {
       type: String,
       default: "",
+      required: false,
+    },
+    target: {
+      type: String,
       required: false,
     },
     classType: {
