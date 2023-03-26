@@ -3,7 +3,7 @@
 ## Technology Stack
 - VueJS
 - Typescript
-- Prettier
+- ESlint/Prettier
 - Jest
 - Cypress
 - TailwindCSS
