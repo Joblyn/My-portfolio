@@ -13,6 +13,7 @@
     "lint-fix": "vue-cli-service lint --fix"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "autoprefixer": "^10",
     "core-js": "^3.8.3",
     "gsap": "^3.11.1",

@@ -2,7 +2,7 @@
   <a
     v-if="btnType === 'link'"
     :href="href"
-    :class="classes"
+    :class="[classes, className]"
     :target="target"
     :download="download"
   >
@@ -10,7 +10,7 @@
   </a>
   <button
     v-else-if="btnType === 'button'"
-    :class="classes"
+    :class="[classes, className]"
     @click="onClick"
     :type="type"
     :form="form"
@@ -20,7 +20,7 @@
   <router-link
     v-else-if="btnType === 'router-link'"
     :to="route"
-    :class="classes"
+    :class="[classes, className]"
   >
     <slot></slot>
   </router-link>
@@ -70,6 +70,10 @@ export default defineComponent({
       type: String,
       required: false,
     },
+    className: {
+      type: String,
+      required: false,
+    },
   },
   setup(props, ctx) {
     const route: string | RouterLinkProps = ctx.attrs.to as
@@ -78,8 +82,9 @@ export default defineComponent({
     const href: AnchorHTMLAttributes["href"] = ctx.attrs.href as string;
 
     const classes = reactive({
-      button__solid: props.classType === "solid",
+      button__loader: props.classType === "loader",
       button__outline: props.classType === "outline",
+      button__solid: props.classType === "solid",
       header__button: props.header,
     });
 

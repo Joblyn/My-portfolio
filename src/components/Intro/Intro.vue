@@ -23,9 +23,10 @@
           I'm a Frontend Software Engineer. I develop user-friendly, intuitive
           and accessible web applications. I'm a logical, goal driven and
           diligent young champ, committed to growing businesses and improving
-          users' satisfaction accross web. I solve problems with the use code
-          and technologies, applying best practices within the contexts of
-          well-suited use cases, optimising performance and aesthetics.
+          users' satisfaction accross the web. I solve problems with the use of
+          code and software technologies, applying best practices within the
+          contexts of well-suited use cases, and optimising performance and
+          aesthetics.
         </p>
         <action-button
           btnType="button"

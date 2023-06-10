@@ -1,4 +1,4 @@
-.button__solid {
+.button__solid, .button__loader {
   background: #1663fe;
   font-family: "Codec", Arial, "Helvetica Neue", Helvetica, sans-serif;
   color: #f4f4f8;
@@ -24,4 +24,13 @@
 
 .header__button {
   margin-top: 1.5em;
+}
+
+.button__loader {
+  position: relative;
+  height: 3.25em;
+  width: 15em;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 0.3s ease-out;
 }

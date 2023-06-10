@@ -4,16 +4,16 @@
       About Me
       <template #paragraph>
         <p>
-          Front-end enineer and UX specialist, I have 3 years of experience
-          designing for web and digital media and have a horizontal approach to
-          the process. I have had the chance to work for some of the biggest
-          companies in Brazil, from ad agencies to software houses.
+          Front-end Software engineer and UI specialist, I have 3 years of
+          experience developing for the web and have a horizontal approach to
+          the process. I have had developed multiple projects across several
+          industries with a large user base.
         </p>
       </template>
       <template #action>
         <action-button
           btnType="link"
-          href="/docs/Job_Oaikhenah_CV.pdf"
+          href="https://docs.google.com/document/d/1HgR4QD6E-mQFEF4kpsP_FJBX5NgO69x0_Tvbr4G-3Qw/edit?usp=sharing"
           download="Job Oaikhenah's resumé"
         >
           Download my resumé</action-button
@@ -27,7 +27,7 @@
           :src="require(`@/assets/images/job.jpg`)"
           width="808px"
           height="493px"
-          alt="A picture of myself"
+          alt="A picture of Job"
           loading="lazy"
           decoding="async"
         />

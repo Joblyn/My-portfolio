@@ -4,12 +4,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function animate(target: HTMLElement, id: number) {
-  console.log(target);
   const createAnimation = (screen: string) => {
     const delay = screen === "small" ? (id % 2 ? 0.3 : 0) : id ? 0.3 * id : 0;
-    console.log("id", id);
-    console.log("delay", delay);
-    console.log("screen", screen);
     gsap.fromTo(
       target,
       {

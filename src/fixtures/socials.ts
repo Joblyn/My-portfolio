@@ -19,12 +19,12 @@ const socials: Social[] = [
     alt: "linkedin",
     link: "https://www.linkedin.com/in/job-oaikhenah-5056111a1/",
   },
-  {
-    name: "Instagram",
-    icon: "instagram.svg",
-    alt: "instagram",
-    link: "https://www.instagram.com/_joblyn_/",
-  },
+  // {
+  //   name: "Instagram",
+  //   icon: "instagram.svg",
+  //   alt: "instagram",
+  //   link: "https://www.instagram.com/_joblyn_/",
+  // },
   // {
   //   name: "Medium",
   //   icon: "medium.svg",

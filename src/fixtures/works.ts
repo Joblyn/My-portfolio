@@ -4,14 +4,13 @@ const works: Work[] = [
   {
     id: "tnnafrica",
     title: "TNNAfrica",
-    info: "Doctor-Patient health care web application for TNNAfrica. It includes document sharing, appointment booking, and video call sessions.",
+    info: "Doctor-Patient health care web application. It includes document sharing, appointment booking, and video call sessions.",
     article: [
       "Doctor-Patient health care web application for TNNAfrica. It includes document sharing, appointment booking, and video call sessions.",
-      "Collaborated with a team of developers and designers, working as the frontend engineer. Built the frontend of the application using ReactJS, Redux state management, consuming RESTAPIs for backend communication. Video call sessions were built using WebRTC.",
     ],
     paragraphs: [
-      "I am a huge board game fan and collector. And, as a UX designer and game designer, I'd been thinking for a while now that I could put all these passions together into creating digital board games.",
-      "I've made this game using Vue.js for the front end (with PWA support) and Firebase to manage the real-time updates and did all the UI and art direction for it.",
+      "TNN Africa is a web based software application aimed at improving the Nutrition Value chain in Africa. It improves Doctor-Patient communitcation with features including in-app document sharing, appointment booking, and in-app video call sessions.",
+      "The frontend of the application was built with frontend technologies including ReactJS, Redux, and TailwindCSS. The backend infrastructure was developed with NodeJS. REST APIs were used for data transfer and commnunication between the frontend and the backend. In-app video call feature was integrated using WebRTC",
     ],
     banner: "banner.png",
     width: 903,
@@ -59,8 +58,11 @@ const works: Work[] = [
     height: 825,
     width: 1440,
     paragraphs: [
-      "I am a huge board game fan and collector. And, as a UX designer and game designer, I'd been thinking for a while now that I could put all these passions together into creating digital board games.",
-      "I've made this game using Vue.js for the front end (with PWA support) and Firebase to manage the real-time updates and did all the UI and art direction for it.",
+      "CV Builder is a web-based application that allows users to create and customize their own professional CV or resume. The application is built using modern web technologies such as ReactJS, Firebase, and Cloud Firestore.",
+      "It offers a range of features and tools for creating and customizing professional CVs or resumes.",
+      "The front-end of the application is designed using a responsive layout, with a clean and modern user interface that is easy to navigate. The application features a number of sections including personal information, work experience, education, skills, and more. Users can easily add and edit sections as needed, and preview their CV in real-time.",
+      "Upon completion of all forms a downloadable PDF document of the user's CV is created.",
+      "In terms of security, the application employs a number of measures to protect user data and prevent unauthorized access. This includes the use of Firebase authentication to secure user accounts, and SSL encryption to secure all data transmitted between the user's device and the application server.",
     ],
     pages: [
       {
@@ -98,8 +100,9 @@ const works: Work[] = [
       "It was built with React Context API, Redux state management library, and Firestore database.",
     ],
     paragraphs: [
-      "I am a huge board game fan and collector. And, as a UX designer and game designer, I'd been thinking for a while now that I could put all these passions together into creating digital board games.",
-      "I've made this game using Vue.js for the front end (with PWA support) and Firebase to manage the real-time updates and did all the UI and art direction for it.",
+      "Netflix Clone is a web-based application that replicates the look and functionality of the popular streaming platform, Netflix. The application is built using modern web technologies such as ReactJS, Firebase, and Cloud Firestore",
+      "The front-end of the application is designed using a responsive layout, with a user interface that closely resembles the Netflix interface. The application features a range of features and tools, including the ability to browse and search for movies and TV shows, view trailers, and add items to a watchlist.",
+      "It integrates with Firestore for data storage and management, and alos Firebase Auth for user authentication and access to app features.",
     ],
     banner: "banner.png",
     height: 833,
@@ -144,8 +147,8 @@ const works: Work[] = [
       "Users are able to search for a domain name, register a domain name, and manage their domains on the clientarea. They can also manage their hosting accounts, and view (and download) their invoices. Buil with ReactJS, Redux and RESTAPIs. Payment integration was done using Paystack and Flutterwave.",
     ],
     paragraphs: [
-      "I am a huge board game fan and collector. And, as a UX designer and game designer, I'd been thinking for a while now that I could put all these passions together into creating digital board games.",
-      "I've made this game using Vue.js for the front end (with PWA support) and Firebase to manage the real-time updates and did all the UI and art direction for it.",
+      "Unique, dynamic, reseller site auto generated for individual resellers of Whogohost, a web hosting company. Website's data is auto generated according to the reseller's domain.",
+      "Users are able to search for a domain name, register a domain name, and manage their domains on the clientarea. They can also manage their hosting accounts, and view (and download) their invoices. Buil with ReactJS, Redux and RESTAPIs. Payment integration was done using Paystack and Flutterwave.",
     ],
     banner: "banner.png",
     width: 8320,
@@ -195,8 +198,8 @@ const works: Work[] = [
       "Developed with HTML, CSS, JavaScript and jquery.",
     ],
     paragraphs: [
-      "I am a huge board game fan and collector. And, as a UX designer and game designer, I'd been thinking for a while now that I could put all these passions together into creating digital board games.",
-      "I've made this game using Vue.js for the front end (with PWA support) and Firebase to manage the real-time updates and did all the UI and art direction for it.",
+      "Beautiful, aesthetic, fully responsive landing page for Whogohost resellers, capturing brand identitiy and elegance.",
+      "Developed with HTML, CSS, JavaScript and jquery.",
     ],
     banner: "banner.png",
     width: 5162,
@@ -236,8 +239,8 @@ const works: Work[] = [
       "Developed with TailwindCSS and ReactJS.",
     ],
     paragraphs: [
-      "I am a huge board game fan and collector. And, as a UX designer and game designer, I'd been thinking for a while now that I could put all these passions together into creating digital board games.",
-      "I've made this game using Vue.js for the front end (with PWA support) and Firebase to manage the real-time updates and did all the UI and art direction for it.",
+      "Beautiful, aesthetic web application for trading of bitcoin and gitcards, with selective dark theme.",
+      "Developed with TailwindCSS and ReactJS.",
     ],
     banner: "banner.png",
     width: 7192,

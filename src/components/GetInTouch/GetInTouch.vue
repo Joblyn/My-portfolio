@@ -1,6 +1,6 @@
 <template>
   <section id="get-in-touch" class="get_in_touch_section">
-    <section-header> Get In Touch </section-header>
+    <section-header>Get In Touch</section-header>
 
     <div>
       <article>
@@ -11,8 +11,9 @@
             target="_blank"
             rel="noopener noreferrer"
             id="my_email"
-            >oaikhenahjob@gmail.com</a
           >
+            oaikhenahjob@gmail.com
+          </a>
           <a href="tel:+2348136767175" id="my_phone">+2348136767175</a>
         </div>
 
@@ -20,11 +21,10 @@
           <p>
             Nice to meet you! If you want to keep in touch, send me a message
             using my email or phone details above, or use this form right here!
-            Let's talk about design projects, game design theory, or how The
-            Clash is the most awesome band ever! You can also follow my online
-            rants about Botafogo, the soccer team I support, although I highly
-            discourage you spend your time with that activity. Anyway, you can
-            hit me up on the social networks below:
+            Let's talk about software projects, tech, and all! You can also
+            follow my online rants about Manchester United, the soccer team I
+            support, although I highly discourage you spend your time with that
+            activity. Anyway, you can hit me up on the social networks below:
           </p>
           <div>
             <span class="social" v-for="social in socials" :key="social.name">
@@ -46,13 +46,35 @@
 
         <div class="contact__form">
           <span>
-            <form id="contact__form">
+            <form id="contact__form" @submit.prevent="sendEmail">
               <div class="form__group">
-                <input id="name" name="name" required type="text" />
+                <input
+                  id="first_name"
+                  name="name"
+                  required
+                  type="text"
+                  @input="validate"
+                  :class="[formError.name ? 'invalid' : '']"
+                  v-model="sendData.name"
+                />
+                <label class="error" for="name" v-if="formError.name">
+                  This field is required
+                </label>
                 <label for="name">Your name</label>
               </div>
               <div class="form__group">
-                <input id="email" name="email" required type="email" />
+                <input
+                  id="email"
+                  name="email"
+                  required
+                  type="email"
+                  @input="validate"
+                  :class="[formError.email ? 'invalid' : '']"
+                  v-model="sendData.email"
+                />
+                <label class="error" for="email" v-if="formError.email">
+                  Please enter a valid email address
+                </label>
                 <label for="email">Your e-mail</label>
               </div>
               <div class="form__group">
@@ -61,8 +83,14 @@
                   cols="50"
                   id="message"
                   name="message"
+                  @input="validate"
                   required
+                  :class="[formError.message ? 'invalid' : '']"
+                  v-model="sendData.message"
                 ></textarea>
+                <label class="error" for="email" v-if="formError.message">
+                  This field is required
+                </label>
                 <label for="message">Your message</label>
               </div>
 
@@ -70,7 +98,9 @@
                 <action-button
                   btnType="button"
                   type="submit"
+                  classType="loader"
                   form="contact__form"
+                  :className="[result.loading ? 'loading' : '']"
                 >
                   <span>Let's talk</span>
                   <div>
@@ -80,6 +110,9 @@
                   </div>
                 </action-button>
               </div>
+              <output :class="[output_class]">
+                {{ result.text }}
+              </output>
             </form>
           </span>
         </div>
@@ -89,13 +122,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, inject } from "vue";
+import { defineComponent, onMounted, inject, reactive, ref } from "vue";
 import { updateActiveLinkOnScroll } from "@/components/FixedNav/animate";
 import { ActiveLinkContext } from "@/interfaces/nav";
 import SectionHeader from "@/components/Shared/SectionHeader/SectionHeader.vue";
 import ActionButton from "@/components/Shared/ActionButton/ActionButton.vue";
 import socials from "@/fixtures/socials";
 import animate from "@/components/GetInTouch/animate";
+import emailjs from "@emailjs/browser";
 
 export default defineComponent({
   name: "GetInTouch",
@@ -105,6 +139,68 @@ export default defineComponent({
   },
   setup() {
     const { updateActiveLink } = inject("active-link") as ActiveLinkContext;
+    const sendData = reactive({
+      name: "",
+      email: "",
+      message: "",
+    });
+    const formError: { [key: string]: boolean } = reactive({
+      name: false,
+      email: false,
+      message: false,
+    });
+    const result = reactive({
+      loading: false,
+      text: "",
+    });
+    const output_class = ref("");
+    const sendEmail = () => {
+      result.loading = true;
+
+      emailjs
+        .sendForm(
+          process.env.VUE_APP_EMAIL_JS_SERVICE_ID,
+          process.env.VUE_APP_EMAIL_JS_TEMPLATE_ID,
+          "#contact__form",
+          process.env.VUE_APP_EMAIL_JS_PUBLIC_KEY
+        )
+        .then(
+          () => {
+            result.loading = false;
+            result.text =
+              "Got it! I will reply as soon as possible. Thank you!";
+            output_class.value = "form-success";
+          },
+          () => {
+            result.loading = false;
+            result.text =
+              "There was a problem sending your request. You can try again later, or send me an e-mail";
+            output_class.value = "form-error";
+          }
+        );
+    };
+
+    interface InputEvent extends Event {
+      target: HTMLInputElement;
+    }
+
+    const validate = (e: InputEvent) => {
+      const name = e.target.name;
+      let email_regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+      switch (name) {
+        case "name":
+          if (!e.target.value) formError.name = true;
+          else if (formError.name) formError.name = false;
+          break;
+        case "email":
+          if (!e.target.value.match(email_regex)) formError.email = true;
+          else if (formError.email) formError.email = false;
+          break;
+        case "message":
+          if (!e.target.value) formError.message = true;
+          else if (formError.message) formError.message = false;
+      }
+    };
 
     onMounted(() => {
       updateActiveLinkOnScroll("#get-in-touch", updateActiveLink);
@@ -113,6 +209,12 @@ export default defineComponent({
 
     return {
       socials,
+      sendData,
+      validate,
+      formError,
+      sendEmail,
+      result,
+      output_class,
     };
   },
 });

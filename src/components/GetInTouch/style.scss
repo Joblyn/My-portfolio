@@ -105,6 +105,18 @@
             -moz-appearance: none;
             resize: none;
 
+            &.invalid {
+              outline: 1px solid #c69c6d;
+
+              & ~ label {
+                transform: scale(0.75) translateY(-0.75em);
+              }
+            }
+
+            &.valid {
+              outline: 1px solid #20bf55;
+            }
+
             &:focus {
               outline: 1px solid #20bf55;
 
@@ -122,19 +134,23 @@
             font-family: Codec, Arial, Helvetica Neue, Helvetica, sans-serif;
             text-transform: uppercase;
             top: 1.25em;
+          }
+          label {
             left: 1em;
             transition: all 0.3s ease-out;
             transform-origin: 0 0 0;
+          }
+          .error {
+            right: 1em;
+            transform-origin: 100% 0 0;
+            transform: scale(0.75) translateY(-0.75em);
+            color: #c69c6d;
+            text-align: right;
           }
         }
 
         > form {
           button[type="submit"] {
-            position: relative;
-            height: 3.25rem;
-            width: 15em;
-            overflow: hidden;
-            white-space: nowrap;
 
             span {
               opacity: 1;
@@ -170,10 +186,66 @@
                   animation: Button_pathRect__6Ue0A 3s
                     cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
                 }
+
+                @keyframes Button_pathRect__6Ue0A {
+                  25% {
+                    stroke-dashoffset: 64;
+                  }
+
+                  50% {
+                    stroke-dashoffset: 128;
+                  }
+                  75% {
+                    stroke-dashoffset: 192;
+                  }
+                  100% {
+                    stroke-dashoffset: 256;
+                  }
+                }
+              }
+            }
+
+            &:is(.loading) {
+              width: 3.25em;
+              pointer-events: none;
+
+              span {
+                opacity: 0;
+                transition: opacity 0.1s ease-out;
+              }
+
+              svg {
+                opacity: 1;
+                transition: opacity 0.3s ease-out 0.1s;
               }
             }
           }
         }
+      }
+
+      output {
+        padding: 0 1em;
+        margin-top: 1em;
+        height: 1px;
+        display: block;
+        width: 100%;
+        opacity: 0;
+        transform: translateY(-1em);
+        transition: all 0.3s ease-out;
+
+        &[class*="form"] {
+          padding: 1em;
+          height: 100%;
+          transform: translateY(0);
+          opacity: 1;
+          pointer-events: all;
+        }
+      }
+      .form-error {
+        background: #b88348;
+      }
+      .form-success {
+        background: #199342;
       }
     }
   }

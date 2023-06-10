@@ -75,7 +75,8 @@ export default defineComponent({
       required: true,
     },
     work: {
-      type: Object as PropType<Ref<Work | null>>,
+      type: Object as PropType<Ref<Work>>,
+      required: true,
     },
   },
   setup(props, { emit }) {
