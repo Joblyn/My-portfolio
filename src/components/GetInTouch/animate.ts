@@ -21,7 +21,7 @@ export default function animate() {
         start: "top 99%",
         toggleActions: "play none none reverse",
       },
-    }
+    },
   );
 
   gsap.fromTo(
@@ -38,9 +38,9 @@ export default function animate() {
       ease: "SlowMo.easeIn",
       scrollTrigger: {
         trigger: ".social",
-        start: "top 98%",
+        start: "top 99%",
         toggleActions: "play none none reverse",
       },
-    }
+    },
   );
 }

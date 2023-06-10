@@ -23,7 +23,7 @@ export default function animate(target: HTMLElement, id: number) {
           start: "top 99%",
           toggleActions: "play none none reverse",
         },
-      }
+      },
     );
   };
 

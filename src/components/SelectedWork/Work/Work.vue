@@ -35,11 +35,8 @@ export default defineComponent({
     const activeWork: Ref<Work | null> = ref(null);
 
     const updateModal = (value: boolean, work: Work | null) => {
-      console.log("work", work);
       isOpen.value = value;
       activeWork.value = work;
-      console.log("isOpen", isOpen);
-      console.log("activework", activeWork.value);
     };
 
     onMounted(() =>

@@ -75,7 +75,7 @@ export default defineComponent({
       required: true,
     },
     work: {
-      type: Object as PropType<Ref<Work>>,
+      type: Object as PropType<Ref<Work | null>>,
       required: true,
     },
   },

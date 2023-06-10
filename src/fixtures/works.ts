@@ -129,7 +129,7 @@ const works: Work[] = [
         caption: "Mobile view of movies page",
       },
       {
-        src: "ppage5.png",
+        src: "page5.png",
         alt: "Preview movie info",
         caption: "Read about a movie before watching",
       },
