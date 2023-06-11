@@ -21,6 +21,8 @@ module.exports = defineConfig({
       faviconVG: "img/icons/favicon.svg",
       favicon32: "img/icons/favicon-32x32.png",
       favicon16: "img/icons/favicon-16x16.png",
+      favicon192: "img/icons/favicon-192x192.png",
+      favicon512: "img/icons/favicon-512x512.png",
       appleTouchIcon: "img/icons/favicon-152x152.png",
       maskIcon: "img/icons/favicon.svg",
       msTileImage: "img/icons/favicon-144x144.png",
