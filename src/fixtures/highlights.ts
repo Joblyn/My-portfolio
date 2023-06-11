@@ -26,8 +26,7 @@ const Highlights: Highlight[] = [
     id: 3,
     name: "Personal",
     icon: "personal.svg",
-    article:
-      "From Lagos, Nigeria. Single and currently not searching for a mate.",
+    article: "Currently based in Lagos, Nigeria.",
   },
 ];
 

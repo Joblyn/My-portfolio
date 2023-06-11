@@ -37,7 +37,7 @@
               >
             </p>
             <p v-if="work.github">
-              You can check the source code of this project on
+              You can check the source code of this project on:
               <a
                 :href="'https://' + work.github"
                 target="_blank"

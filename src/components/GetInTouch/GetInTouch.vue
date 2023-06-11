@@ -186,7 +186,7 @@ export default defineComponent({
 
     const validate = (e: InputEvent) => {
       const name = e.target.name;
-      let email_regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+      const email_regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
       switch (name) {
         case "name":
           if (!e.target.value) formError.name = true;

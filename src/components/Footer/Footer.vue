@@ -23,7 +23,7 @@ import { defineComponent } from "vue";
 import SectionHeader from "@/components/Shared/SectionHeader/SectionHeader.vue";
 
 export default defineComponent({
-  name: "Footer",
+  name: "FooterSection",
   components: {
     SectionHeader,
   },

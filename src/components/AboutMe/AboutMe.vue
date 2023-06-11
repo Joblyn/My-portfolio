@@ -6,8 +6,8 @@
         <p>
           Front-end Software engineer and UI specialist, I have 3 years of
           experience developing for the web and have a horizontal approach to
-          the process. I have had developed multiple projects across several
-          industries with a large user base.
+          the process. I have had the opportunity to develope multiple software
+          applications across several industries with a large user base.
         </p>
       </template>
       <template #action>

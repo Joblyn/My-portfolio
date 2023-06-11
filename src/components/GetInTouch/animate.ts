@@ -21,7 +21,7 @@ export default function animate() {
         start: "top 99%",
         toggleActions: "play none none reverse",
       },
-    },
+    }
   );
 
   gsap.fromTo(
@@ -41,6 +41,6 @@ export default function animate() {
         start: "top 99%",
         toggleActions: "play none none reverse",
       },
-    },
+    }
   );
 }

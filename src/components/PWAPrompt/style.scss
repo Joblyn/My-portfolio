@@ -1,0 +1,98 @@
+.pwa-prompt__container {
+  position: fixed;
+  z-index: 100;
+  bottom: 1rem;
+  left: 1rem;
+  border-radius: 0.75rem;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #091619;
+  max-width: 24rem;
+  width: 90%;
+  border: 1px solid #20bf55;
+  animation: reveal 0.35s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform-origin: 10% 80%;
+
+  @keyframes reveal {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  &.closing {
+    animation: disappear 1.2s ease-out;
+    opacity: 0;
+
+    @keyframes disappear {
+      0% {
+        opacity: 1;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+
+  .info__container {
+    color: "#f4f4f8";
+    padding-right: 0.5rem;
+
+    h5 {
+      margin: 0;
+      font-size: 1.05rem;
+      letter-spacing: 0.012rem;
+    }
+    p {
+      font-size: 0.875rem;
+      white-space: normal;
+      margin: 0.5rem 0 0;
+    }
+  }
+
+  .action__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 0.5rem;
+
+    & > [class*="pwa-prompt__button"] {
+      font-size: 1.05rem;
+      width: 6.75rem;
+      padding: 0.5rem;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .pwa-prompt__button__accept {
+      border-radius: 2rem;
+      background-color: #1663fe;
+      color: #f4f4f8;
+      border: 1px solid #1663fe;
+      margin-bottom: 0.45rem;
+
+      &:hover {
+        background-color: #4985fe;
+        border: 1px solid #4985fe;
+      }
+    }
+    .pwa-prompt__button__decline {
+      border: none;
+      background-color: transparent;
+      color: #f4f4f8;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
