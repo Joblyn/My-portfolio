@@ -19,7 +19,7 @@ export const animateWorkItem = (figureRef: HTMLElement) => {
     tt: number,
     dist: number,
     direction: "left" | "right",
-    oldLeft: number;
+    oldLeft: number | undefined;
 
   Draggable.create(".work__image img", {
     type: "x",
@@ -90,11 +90,27 @@ export const animateWorkItem = (figureRef: HTMLElement) => {
     });
   };
 
-  // window.addEventListener("resize", () => {
-  //   targetRect = document
-  //     .querySelector(".work__image img")
-  //     ?.getBoundingClientRect() as DOMRect;
-  // });
+  window.addEventListener("resize", () => {
+    targetRect = document
+      .querySelector(".work__image img")
+      ?.getBoundingClientRect() as DOMRect;
+    oldLeft = undefined;
+    const mm = gsap.matchMedia();
+    gsap.set(figureRef, {
+      x: "-6em",
+    });
+    mm.add("(max-width: 1739px)", () => {
+      gsap.set(figureRef, {
+        x: "-3em",
+      });
+    });
+    mm.add("(max-width: 767px)", () => {
+      gsap.set(figureRef, {
+        x: "-1em",
+      });
+    });
+  });
+
   // reveal on scroll
   gsap.fromTo(
     figureRef,

@@ -84,12 +84,6 @@ export default defineComponent({
       }
     });
 
-    window.addEventListener("resize", () => {
-      if (figureRef.value) {
-        animateWorkItem(figureRef.value);
-      }
-    });
-
     return {
       figureRef,
     };
