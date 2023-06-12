@@ -7,6 +7,7 @@ gsap.registerPlugin(Draggable, ScrollTrigger);
 export const animateWorkItem = (figureRef: HTMLElement) => {
   const friction = 20;
   const duration = 0.6;
+  // eslint-disable-next-line prefer-const
   let targetRect: DOMRect = document
       .querySelector(".work__image img")
       ?.getBoundingClientRect() as DOMRect,
@@ -23,7 +24,6 @@ export const animateWorkItem = (figureRef: HTMLElement) => {
   Draggable.create(".work__image img", {
     type: "x",
     lockAxis: true,
-    // allowNativeTouchScrolling: true,
     onDragStart: function () {
       startTime = new Date().getTime();
       initRect = this.target.getBoundingClientRect();
@@ -90,12 +90,11 @@ export const animateWorkItem = (figureRef: HTMLElement) => {
     });
   };
 
-  window.addEventListener("resize", () => {
-    targetRect = document
-      .querySelector(".work__image img")
-      ?.getBoundingClientRect() as DOMRect;
-  });
-
+  // window.addEventListener("resize", () => {
+  //   targetRect = document
+  //     .querySelector(".work__image img")
+  //     ?.getBoundingClientRect() as DOMRect;
+  // });
   // reveal on scroll
   gsap.fromTo(
     figureRef,

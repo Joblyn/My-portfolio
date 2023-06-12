@@ -1,6 +1,6 @@
 .work_modal {
   position: fixed;
-  top: 0;
+  top: 10%;
   left: 0;
   width: 100%;
   height: 100%;
@@ -16,7 +16,19 @@
   }
 
   &.closing {
+    // transform-origin: top;
     animation: closing 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.25) forwards;
+  }
+
+  @media screen and (max-width: 768px) {
+    &.open {
+      animation: reveal__mobile 1s cubic-bezier(0.175, 0.885, 0.32, 1.25)
+        forwards;
+    }
+    &.closing {
+      animation: closing__mobile 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.25)
+        forwards;
+    }
   }
 
   @keyframes reveal {
@@ -33,6 +45,26 @@
       transform: scale(1) translate(0);
     }
   }
+  @keyframes reveal__mobile {
+    0% {
+      top: 110%;
+      // transform: scale(1) translate(0%, 110%);
+    }
+    90% {
+      top: 15%;
+      left: 5%;
+      width: 90%;
+      height: 90%;
+      // transform: scale(0.9) translate(50%, 50%);
+    }
+    100% {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // transform: scale(1) translate(0);
+    }
+  }
 
   @keyframes closing {
     0% {
@@ -46,7 +78,27 @@
       left: 50%;
     }
     100% {
-      transform: translate(0, 100%);
+      transform: translate(0, 110%);
+    }
+  }
+  @keyframes closing__mobile {
+    0% {
+      top: -60%;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      // transform: scale(1) translate(0, 0);
+    }
+    50% {
+      top: -20%;
+      height: 40%;
+      width: 90%;
+      left: 5%;
+    }
+    100% {
+      width: 100%;
+      top: 10%;
+      left: 0;
     }
   }
 
