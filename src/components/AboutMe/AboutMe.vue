@@ -13,6 +13,7 @@
       <template #action>
         <action-button
           btnType="link"
+          target="_blank"
           href="https://docs.google.com/document/d/1HgR4QD6E-mQFEF4kpsP_FJBX5NgO69x0_Tvbr4G-3Qw/edit?usp=sharing"
           download="Job Oaikhenah's resumé"
         >
