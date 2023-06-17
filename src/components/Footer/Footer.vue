@@ -11,7 +11,10 @@
           </p>
         </div>
         <figure>
-          <img alt="My logo" :src="require(`@/assets/images/logo.svg`)" />
+          <img
+            alt="Logo of Joblyn"
+            :src="require(`@/assets/images/logo.svg`)"
+          />
         </figure>
       </div>
     </div>

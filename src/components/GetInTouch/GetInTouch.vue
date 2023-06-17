@@ -11,10 +11,13 @@
             target="_blank"
             rel="noopener noreferrer"
             id="my_email"
+            aria-describedby="email"
           >
             oaikhenahjob@gmail.com
           </a>
-          <a href="tel:+2348136767175" id="my_phone">+2348136767175</a>
+          <a href="tel:+2348136767175" id="my_phone" aria-describedby="phone"
+            >+2348136767175</a
+          >
         </div>
 
         <aside>
@@ -26,8 +29,13 @@
             support, although I highly discourage you spend your time with that
             activity. Anyway, you can hit me up on the social networks below:
           </p>
-          <div>
-            <span class="social" v-for="social in socials" :key="social.name">
+          <div aria-describedby="social links">
+            <span
+              class="social"
+              v-for="social in socials"
+              :key="social.name"
+              :aria-describedby="social.name"
+            >
               <action-button
                 btnType="link"
                 :href="social.link"
@@ -44,7 +52,7 @@
           </div>
         </aside>
 
-        <div class="contact__form">
+        <div class="contact__form" aria-describedby="contact form">
           <span>
             <form id="contact__form" @submit.prevent="sendEmail">
               <div class="form__group">

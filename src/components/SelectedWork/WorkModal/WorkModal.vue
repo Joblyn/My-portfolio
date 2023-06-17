@@ -13,7 +13,7 @@
 
     <div
       :class="['work_modal_content', isOpen ? 'loaded' : '']"
-      aria-describedby="modal content"
+      :aria-describedby="`${work.title} overview`"
     >
       <div class="wrapper" v-if="isOpen">
         <header>

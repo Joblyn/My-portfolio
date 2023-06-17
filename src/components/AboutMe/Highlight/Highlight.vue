@@ -1,5 +1,5 @@
 <template>
-  <span class="highlight-item" ref="highlightRef">
+  <span class="highlight-item" ref="highlightRef" :aria-describedby="name">
     <div>
       <figure>
         <img :src="require(`@/assets/icons/${icon}`)" :alt="`${name} icon`" />

@@ -1,5 +1,9 @@
 <template>
-  <section id="about-me" class="about_me_section">
+  <section
+    id="about-me"
+    class="about_me_section"
+    aria-describedby="about Job Oaikhenah"
+  >
     <section-header>
       About Me
       <template #paragraph>

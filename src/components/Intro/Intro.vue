@@ -1,5 +1,10 @@
 <template>
-  <header id="intro" class="header loaded" aria-label="intro">
+  <header
+    id="intro"
+    class="header loaded"
+    aria-label="intro"
+    aria-describedby="Introduction about Job Oaikhenah"
+  >
     <div class="header__wrapper wrapper">
       <svg class="header__svg" width="100%" height="100%">
         <rect
@@ -19,7 +24,7 @@
           a Frontend Engineer
         </h2>
         <p class="header__subtitle">Welcome to my portfolio</p>
-        <p class="header__article">
+        <p class="header__article" aria-describedby="professional statement">
           I'm a Frontend Software Engineer. I develop user-friendly, intuitive
           and accessible web applications. I'm a logical, goal driven and
           diligent young champ, committed to growing businesses and improving

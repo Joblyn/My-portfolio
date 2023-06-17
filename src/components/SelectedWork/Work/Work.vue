@@ -1,5 +1,5 @@
 <template>
-  <section id="selected-work" class="work_section">
+  <section id="selected-work" class="work_section" aria-describedby="my works">
     <section-header>Selected Work</section-header>
     <work-items @update-modal="updateModal" />
     <work-modal

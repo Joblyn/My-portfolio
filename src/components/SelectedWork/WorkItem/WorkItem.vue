@@ -1,5 +1,5 @@
 <template>
-  <div class="work__item">
+  <div class="work__item" :aria-describedby="title">
     <div class="work__wrapper">
       <figure class="work__image" ref="figureRef">
         <img
@@ -11,18 +11,21 @@
           :height="height"
           loading="lazy"
           decoding="async"
+          :aria-describedby="`${title} preview image`"
         />
       </figure>
     </div>
     <article>
       <div>
-        <h3 class="work__title">{{ title }}</h3>
-        <h4 class="work__tags">
+        <h3 class="work__title" :aria-describedby="title">{{ title }}</h3>
+        <h4 class="work__tags" :aria-describedby="`${title} technologies`">
           <span v-for="tag in tags" :key="tag" class="work__tag">{{
             tag
           }}</span>
         </h4>
-        <p class="work__information">{{ info }}</p>
+        <p class="work__information" :aria-describedby="`${title} overview`">
+          {{ info }}
+        </p>
         <button role="button" class="work__link" @click="openModal">
           More about this project
         </button>
