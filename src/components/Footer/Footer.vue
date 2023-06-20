@@ -5,10 +5,10 @@
       <div>
         <div>
           <p>Thanks for visiting.</p>
-          <p>
+          <!-- <p>
             Inspired by
             <a href="https://aleixo.me/" target="_blank">Aleixo.me</a>
-          </p>
+          </p> -->
         </div>
         <figure>
           <img
