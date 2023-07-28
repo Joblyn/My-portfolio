@@ -13,43 +13,43 @@
 
     <div
       :class="['work_modal_content', isOpen ? 'loaded' : '']"
-      :aria-describedby="`${work.title} overview`"
+      :aria-describedby="`${work?.title} overview`"
     >
       <div class="wrapper" v-if="isOpen">
         <header>
-          <h2>{{ work.title }}</h2>
+          <h2>{{ work?.title }}</h2>
           <h3>
-            {{ work.tags.join(" ") }}
+            {{ work?.tags.join(" ") }}
           </h3>
         </header>
         <section>
           <div>
-            <p v-for="(paragraph, id) in work.paragraphs" :key="id">
+            <p v-for="(paragraph, id) in work?.paragraphs" :key="id">
               {{ paragraph }}
             </p>
             <p>
               You can check this project live on:
               <a
-                :href="'https://' + work.live"
+                :href="'https://' + work?.live"
                 target="_blank"
                 rel="noopener noreferrer"
-                >{{ work.live }}</a
+                >{{ work?.live }}</a
               >
             </p>
-            <p v-if="work.github">
+            <p v-if="work?.github">
               You can check the source code of this project on:
               <a
-                :href="'https://' + work.github"
+                :href="'https://' + work?.github"
                 target="_blank"
                 rel="noopener noreferrer"
-                >{{ work.github }}</a
+                >{{ work?.github }}</a
               >
             </p>
-            <p>
+            <p v-if="work?.pages">
               <img
                 v-for="(page, id) in work.pages"
                 :key="id"
-                :src="require(`@/assets/images/works/${work.id}/${page.src}`)"
+                :src="require(`@/assets/images/works/${work?.id}/${page.src}`)"
                 :alt="page.alt"
                 :fetchpriority="id === 0 ? 'high' : 'low'"
                 loading="lazy"
