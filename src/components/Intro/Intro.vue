@@ -21,17 +21,18 @@
           Hi,
           <br />
           I'm Job Oaikhenah, <br />
-          a Frontend Engineer
+          a Software Engineer
         </h2>
         <p class="header__subtitle">Welcome to my portfolio</p>
         <p class="header__article" aria-describedby="professional statement">
-          I'm a Frontend Software Engineer. I develop user-friendly, intuitive
-          and accessible web applications. I'm a logical, goal driven and
-          diligent young champ, committed to growing businesses and improving
-          users' satisfaction accross the web. I solve problems with the use of
-          code and software technologies, applying best practices within the
-          contexts of well-suited use cases, and optimising performance and
-          aesthetics.
+          I'm a Software Engineer passionate about building user-friendly,
+          intuitive, and accessible applications—from powerful interfaces to
+          efficient backend systems. I'm a logical, goal-driven, and diligent
+          developer, committed to helping businesses grow and improving user
+          satisfaction across the web. I solve problems through code and
+          scalable software solutions, applying best practices, optimizing
+          performance, and delivering clean, maintainable systems that look
+          great and work even better.
         </p>
         <action-button
           btnType="button"

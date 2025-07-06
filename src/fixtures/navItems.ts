@@ -17,6 +17,11 @@ const navItems: NavItem[] = [
     type: "internal",
   },
   {
+    name: "Experience",
+    url: "#experience",
+    type: "internal",
+  },
+  {
     name: "Selected Work",
     url: "#selected-work",
     type: "internal",

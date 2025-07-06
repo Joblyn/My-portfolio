@@ -8,10 +8,11 @@
       About Me
       <template #paragraph>
         <p>
-          Front-end Software engineer and UI specialist, I have 3 years of
-          experience developing for the web and have a horizontal approach to
-          the process. I have had the opportunity to develope multiple software
-          applications across several industries with a large user base.
+          Fullstack Software Engineer with 5 years of experience developing
+          scalable web applications across both frontend and backend. I take a
+          horizontal, user-centered approach to software development and have
+          delivered impactful solutions across multiple industries, supporting
+          applications with large and growing user bases.
         </p>
       </template>
       <template #action>

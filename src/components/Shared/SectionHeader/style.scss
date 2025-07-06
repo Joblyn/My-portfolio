@@ -11,6 +11,7 @@
       counter-increment: section;
       &::before {
         font-family: "Gilroy", Arial, "Helvetica Neue", Helvetica, sans-serif;
+        letter-spacing: 0.03rem;
         content: "0" counter(section) ". ";
       }
     }

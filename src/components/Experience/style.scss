@@ -1,0 +1,53 @@
+.experience-section {
+  color: #fff;
+  padding: 3rem 0 2rem 0;
+}
+.experience-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.experience-title {
+  color: #8b8b8b;
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+}
+.experience-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.experience-col {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.experience-item h4 {
+  font-family: 'Gilroy', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.03rem;
+  font-weight: 600;
+  margin: 0 0 0.2rem 0;
+  color: #fff;
+}
+.experience-item p {
+  font-size: 1rem;
+  color: #bdbdbd;
+  margin: 0 0 0.2rem 0;
+}
+.experience-item span {
+  font-size: 0.95rem;
+  color: #8b8b8b;
+  font-weight: 500;
+}
+@media (max-width: 900px) {
+  .experience-grid {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

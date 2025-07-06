@@ -5,7 +5,7 @@
       <nav class="w-full" role="navigation">
         <h1>
           <router-link :to="ROUTES.HOME.path" class="logo" data-test="logo">
-            Job Oaikhenah: Frontend Engineer
+            Job Oaikhenah: Software Engineer
           </router-link>
         </h1>
         <div class="navigation">
