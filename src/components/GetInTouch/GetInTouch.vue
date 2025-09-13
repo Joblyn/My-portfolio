@@ -15,8 +15,8 @@
           >
             oaikhenahjob@gmail.com
           </a>
-          <a href="tel:+2348136767175" id="my_phone" aria-describedby="phone"
-            >+2348136767175</a
+          <a href="tel:+18322521149" id="my_phone" aria-describedby="phone"
+            >+18322521149</a
           >
         </div>
 
