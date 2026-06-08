@@ -25,14 +25,14 @@
         </h2>
         <p class="header__subtitle">Welcome to my portfolio</p>
         <p class="header__article" aria-describedby="professional statement">
-          I'm a Fullstack Software Engineer passionate about building user-friendly,
-          intuitive, and accessible applications—from powerful interfaces to
-          efficient backend systems. I'm a logical, goal-driven, and diligent
-          developer, committed to helping businesses grow and improving user
-          satisfaction across the web. I solve problems through code and
-          scalable software solutions, applying best practices, optimizing
-          performance, and delivering clean, maintainable systems that look
-          great and work even better.
+          I'm a Fullstack Software Engineer passionate about building
+          user-friendly, intuitive, and accessible applications—from powerful
+          interfaces to efficient backend systems. I'm a logical, goal-driven,
+          and diligent developer, committed to helping businesses grow and
+          improving user satisfaction across the web. I solve problems through
+          code and scalable software solutions, applying best practices,
+          optimizing performance, and delivering clean, maintainable systems
+          that look great and work even better.
         </p>
         <action-button
           btnType="button"
