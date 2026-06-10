@@ -1,0 +1,103 @@
+.articles_section {
+  padding-bottom: 5em;
+
+  .articles_intro {
+    width: calc(100% - (2 * 1em));
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 2em;
+    color: #d2dce0;
+    max-width: 62ch;
+  }
+
+  .articles_grid {
+    width: calc(100% - (2 * 1em));
+    margin-left: 1em;
+    margin-right: 1em;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25em;
+  }
+
+  .article_card {
+    padding: 1.5em;
+    background: #0f2024;
+    border: 1px solid #1e3f45;
+    border-radius: 0.5em;
+    transition: transform 0.3s ease-out, border-color 0.3s ease-out,
+      box-shadow 0.3s ease-out;
+
+    &:hover,
+    &:focus-within {
+      transform: translateY(-4px);
+      border-color: #20bf55;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    }
+
+    .article_platform {
+      margin: 0 0 0.6em;
+      text-transform: uppercase;
+      font-family: 'Codec', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+      font-size: 0.75em;
+      letter-spacing: 0.08em;
+      color: #20bf55;
+    }
+
+    .article_title {
+      margin: 0 0 0.55em;
+      font-size: 1.4em;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .article_summary {
+      margin: 0;
+      color: #d2dce0;
+      font-size: 0.95em;
+    }
+
+    .article_link {
+      margin-top: 1.1em;
+      display: inline-flex;
+      align-items: center;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-family: 'Codec', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+      font-size: 0.9em;
+      color: #4985fe;
+
+      &:after {
+        content: '';
+        width: 0.9em;
+        height: 0.9em;
+        margin-left: 0.45em;
+        background: url(../../assets/icons/right-thick.svg) no-repeat;
+        background-size: 0.9em 0.9em;
+        transition: transform 0.25s ease-out;
+      }
+
+      &:hover:after,
+      &:focus:after {
+        transform: translateX(4px);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .articles_section {
+    .articles_intro,
+    .articles_grid {
+      margin-left: calc(((100% / 12) * 1) + 1em);
+      width: calc(((100% / 12) * 10) - (1em * 2));
+    }
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .articles_section {
+    .articles_grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

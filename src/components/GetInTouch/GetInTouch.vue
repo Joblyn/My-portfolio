@@ -15,8 +15,8 @@
           >
             oaikhenahjob@gmail.com
           </a>
-          <a href="tel:+18322521149" id="my_phone" aria-describedby="phone"
-            >+18322521149</a
+          <a href="tel:+2348136767175" id="my_phone" aria-describedby="phone"
+            >+2348136767175</a
           >
         </div>
 
@@ -43,9 +43,10 @@
                 target="_blank"
               >
                 <span class="sr-only">{{ social.name }}</span>
-                <img
-                  :src="require(`@/assets/logos/${social.icon}`)"
-                  :alt="social.alt"
+                <font-awesome-icon
+                  :icon="social.icon"
+                  :title="social.alt"
+                  aria-hidden="true"
                 />
               </action-button>
             </span>
@@ -108,7 +109,7 @@
                   type="submit"
                   classType="loader"
                   form="contact__form"
-                  :className="[result.loading ? 'loading' : '']"
+                  :className="result.loading ? 'loading' : ''"
                 >
                   <span>Let's talk</span>
                   <div>
@@ -138,12 +139,14 @@ import ActionButton from "@/components/Shared/ActionButton/ActionButton.vue";
 import socials from "@/fixtures/socials";
 import animate from "@/components/GetInTouch/animate";
 import emailjs from "@emailjs/browser";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 export default defineComponent({
   name: "GetInTouch",
   components: {
     SectionHeader,
     ActionButton,
+    FontAwesomeIcon,
   },
   setup() {
     const { updateActiveLink } = inject("active-link") as ActiveLinkContext;
@@ -188,24 +191,23 @@ export default defineComponent({
         );
     };
 
-    interface InputEvent extends Event {
-      target: HTMLInputElement;
-    }
+    const validate = (e: Event) => {
+      const target = e.target as HTMLInputElement | HTMLTextAreaElement | null;
+      if (!target) return;
 
-    const validate = (e: InputEvent) => {
-      const name = e.target.name;
+      const name = target.name;
       const email_regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
       switch (name) {
         case "name":
-          if (!e.target.value) formError.name = true;
+          if (!target.value) formError.name = true;
           else if (formError.name) formError.name = false;
           break;
         case "email":
-          if (!e.target.value.match(email_regex)) formError.email = true;
+          if (!target.value.match(email_regex)) formError.email = true;
           else if (formError.email) formError.email = false;
           break;
         case "message":
-          if (!e.target.value) formError.message = true;
+          if (!target.value) formError.message = true;
           else if (formError.message) formError.message = false;
       }
     };

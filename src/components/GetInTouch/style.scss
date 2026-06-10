@@ -69,6 +69,11 @@
             display: flex;
             place-items: center;
             place-content: center;
+
+            :deep(svg) {
+              width: 1.5em;
+              height: 1.5em;
+            }
           }
         }
       }

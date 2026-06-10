@@ -9,11 +9,14 @@ export const routes: Array<RouteRecordRaw> = [
     component: HomeView,
   },
   {
-    path: ROUTES.BLOG.path,
-    name: ROUTES.BLOG.name,
-    component: () => import(/* webpackChunkName: "blog" */ "@/views/Blog.vue"),
+    path: ROUTES.ARTICLES.path,
+    name: ROUTES.ARTICLES.name,
+    component: () =>
+      import(
+        /* webpackChunkName: "articles" */ '@/views/Articles/Articles.vue'
+      ),
   },
-];
+]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

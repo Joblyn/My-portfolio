@@ -19,10 +19,13 @@
       <div>
         <h3 class="work__title" :aria-describedby="title">{{ title }}</h3>
         <h4 class="work__tags" :aria-describedby="`${title} technologies`">
-          <span v-for="tag in tags" :key="tag" class="work__tag">{{
+          <span v-for="tag in technologyTags" :key="tag" class="work__tag">{{
             tag
           }}</span>
         </h4>
+        <p class="work__project_type" :class="projectTypeClass">
+          {{ projectType }}
+        </p>
         <p class="work__information" :aria-describedby="`${title} overview`">
           {{ info }}
         </p>
@@ -35,7 +38,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, onMounted, ref } from "vue";
+import { computed, defineComponent, PropType, onMounted, ref } from "vue";
 
 import { Tags } from "@/interfaces/work";
 import animateCursor from "@/components/Shared/Cursor/animate";
@@ -73,12 +76,31 @@ export default defineComponent({
       required: true,
     },
     openModal: {
-      type: Function,
+      type: Function as PropType<() => void>,
       required: true,
     },
   },
-  setup() {
+  setup(props) {
     const figureRef = ref(null);
+    const personalProjectTag = "Personal Project";
+    const corporateWorkTag = "Corporate Work";
+
+    const projectType = computed(() =>
+      props.tags.includes(personalProjectTag)
+        ? personalProjectTag
+        : corporateWorkTag
+    );
+
+    const technologyTags = computed(() =>
+      props.tags.filter(
+        (tag) => tag !== personalProjectTag && tag !== corporateWorkTag
+      )
+    );
+
+    const projectTypeClass = computed(() => ({
+      "work__project_type--personal": projectType.value === personalProjectTag,
+      "work__project_type--corporate": projectType.value === corporateWorkTag,
+    }));
 
     onMounted(() => {
       animateCursor();
@@ -89,6 +111,9 @@ export default defineComponent({
 
     return {
       figureRef,
+      projectType,
+      technologyTags,
+      projectTypeClass,
     };
   },
 });

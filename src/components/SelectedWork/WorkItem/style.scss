@@ -55,6 +55,30 @@
     margin: 1em 0 0;
   }
 
+  .work__project_type {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3em 0.8em;
+    border-radius: 999px;
+    font-size: 0.72em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 1.8em 0 0.5em;
+    border: 1px solid transparent;
+  }
+
+  .work__project_type--personal {
+    color: #a7f3d0;
+    border-color: #20bf55;
+    background: rgba(32, 191, 85, 0.12);
+  }
+
+  .work__project_type--corporate {
+    color: #bfdbfe;
+    border-color: #4985fe;
+    background: rgba(73, 133, 254, 0.12);
+  }
+
   .work__tags {
     font-size: 1em;
     text-transform: uppercase;

@@ -1,6 +1,8 @@
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+
 interface Social {
   name: string;
-  icon: string;
+  icon: IconDefinition;
   alt: string;
   link: string;
 }

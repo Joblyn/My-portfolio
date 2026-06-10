@@ -17,9 +17,12 @@
     >
       <div class="wrapper" v-if="isOpen">
         <header>
+          <p class="work_modal__project_type" :class="projectTypeClass">
+            {{ projectType }}
+          </p>
           <h2>{{ work?.title }}</h2>
           <h3>
-            {{ work?.tags.join(" ") }}
+            {{ technologyTags.join(" ") }}
           </h3>
         </header>
         <section>
@@ -64,7 +67,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, Ref, ref, watch } from "vue";
+import { computed, defineComponent, PropType, ref, watch } from "vue";
 import { Work } from "@/interfaces/work";
 
 export default defineComponent({
@@ -75,16 +78,35 @@ export default defineComponent({
       required: true,
     },
     work: {
-      type: Object as PropType<Ref<Work | null>>,
+      type: Object as PropType<Work | null>,
       required: true,
     },
   },
   setup(props, { emit }) {
     const closing = ref(false);
+    const personalProjectTag = "Personal Project";
+    const corporateWorkTag = "Corporate Work";
 
     const workModalClass = ref({
       work_modal: true,
     });
+
+    const projectType = computed(() =>
+      props.work?.github ? personalProjectTag : corporateWorkTag
+    );
+
+    const technologyTags = computed(() =>
+      (props.work?.tags || []).filter(
+        (tag) => tag !== personalProjectTag && tag !== corporateWorkTag
+      )
+    );
+
+    const projectTypeClass = computed(() => ({
+      "work_modal__project_type--personal":
+        projectType.value === personalProjectTag,
+      "work_modal__project_type--corporate":
+        projectType.value === corporateWorkTag,
+    }));
 
     const onClose = () => {
       emit("updateModal", false, null);
@@ -103,6 +125,9 @@ export default defineComponent({
       workModalClass,
       closing,
       onClose,
+      projectType,
+      technologyTags,
+      projectTypeClass,
     };
   },
 });

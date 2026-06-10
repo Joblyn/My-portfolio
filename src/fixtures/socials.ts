@@ -1,48 +1,43 @@
 import { Social } from "@/interfaces/social";
+import {
+  faDev,
+  faGithub,
+  faHashnode,
+  faLinkedin,
+  faXTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 const socials: Social[] = [
   {
     name: "Twitter",
-    icon: "twitter.svg",
+    icon: faXTwitter,
     alt: "twitter",
     link: "https://twitter.com/Joblyn/",
   },
   {
     name: "Github",
-    icon: "github.svg",
+    icon: faGithub,
     alt: "github",
     link: "https://github.com/Joblyn/",
   },
   {
     name: "LinkedIn",
-    icon: "linkedin.svg",
+    icon: faLinkedin,
     alt: "linkedin",
-    link: "https://www.linkedin.com/in/job-oaikhenah-5056111a1/",
+    link: "https://www.linkedin.com/in/job-oaikhenah/",
   },
-  // {
-  //   name: "Instagram",
-  //   icon: "instagram.svg",
-  //   alt: "instagram",
-  //   link: "https://www.instagram.com/_joblyn_/",
-  // },
-  // {
-  //   name: "Medium",
-  //   icon: "medium.svg",
-  //   alt: "medium blog",
-  //   link: "https://medium.com/@oaikhenahjob",
-  // },
   {
     name: "Dev",
-    icon: "dev.svg",
+    icon: faDev,
     alt: "dev.to blog",
     link: "https://dev.to/joblyn",
   },
-  // {
-  //   name: "Hashnode",
-  //   icon: "hashnode.svg",
-  //   alt: "Hashnode blog",
-  //   link: "https://dev.to/joblyn",
-  // },
+  {
+    name: "Hashnode",
+    icon: faHashnode,
+    alt: "hashnode blog",
+    link: "https://hashnode.com/@Joblyn",
+  },
 ];
 
 export default socials;

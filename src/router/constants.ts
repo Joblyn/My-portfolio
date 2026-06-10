@@ -10,4 +10,9 @@ const BLOG: RouteConfig = {
   name: "blog",
 };
 
-export { HOME, BLOG };
+const ARTICLES: RouteConfig = {
+  path: "/articles",
+  name: "articles",
+};
+
+export { HOME, BLOG, ARTICLES };
