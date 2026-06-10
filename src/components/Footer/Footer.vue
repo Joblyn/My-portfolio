@@ -5,10 +5,16 @@
       <div>
         <div>
           <p>Thanks for visiting.</p>
-          <!-- <p>
-            Inspired by
-            <a href="https://aleixo.me/" target="_blank">Aleixo.me</a>
-          </p> -->
+          <p class="footer__repo">
+            Source code:
+            <a
+              href="https://github.com/Joblyn/My-portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub repository
+            </a>
+          </p>
         </div>
         <figure>
           <img
