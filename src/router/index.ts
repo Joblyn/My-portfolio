@@ -13,10 +13,10 @@ export const routes: Array<RouteRecordRaw> = [
     name: ROUTES.ARTICLES.name,
     component: () =>
       import(
-        /* webpackChunkName: "articles" */ '@/views/Articles/Articles.vue'
+        /* webpackChunkName: "articles" */ "@/views/Articles/Articles.vue"
       ),
   },
-]
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

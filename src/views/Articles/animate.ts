@@ -1,11 +1,11 @@
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 export default function animateArticles() {
   gsap.fromTo(
-    '.articles_section .section__header',
+    ".articles_section .section__header",
     {
       opacity: 0,
       y: 30,
@@ -14,12 +14,12 @@ export default function animateArticles() {
       opacity: 1,
       y: 0,
       duration: 0.5,
-      ease: 'power2.out',
-    },
-  )
+      ease: "power2.out",
+    }
+  );
 
   gsap.fromTo(
-    '.articles_intro',
+    ".articles_intro",
     {
       opacity: 0,
       y: 20,
@@ -29,12 +29,12 @@ export default function animateArticles() {
       y: 0,
       duration: 0.5,
       delay: 0.15,
-      ease: 'power2.out',
-    },
-  )
+      ease: "power2.out",
+    }
+  );
 
   gsap.fromTo(
-    '.article_card',
+    ".article_card",
     {
       opacity: 0,
       y: 40,
@@ -44,12 +44,12 @@ export default function animateArticles() {
       y: 0,
       duration: 0.5,
       stagger: 0.15,
-      ease: 'power2.out',
+      ease: "power2.out",
       scrollTrigger: {
-        trigger: '.articles_grid',
-        start: 'top 85%',
-        toggleActions: 'play none none reverse',
+        trigger: ".articles_grid",
+        start: "top 85%",
+        toggleActions: "play none none reverse",
       },
-    },
-  )
+    }
+  );
 }

@@ -35,27 +35,27 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue'
+import { defineComponent, onMounted } from "vue";
 
-import SectionHeader from '@/components/Shared/SectionHeader/SectionHeader.vue'
-import FooterSection from '@/components/Footer/Footer.vue'
-import articles from '@/fixtures/articles'
-import animateArticles from '@/views/Articles/animate'
+import SectionHeader from "@/components/Shared/SectionHeader/SectionHeader.vue";
+import FooterSection from "@/components/Footer/Footer.vue";
+import articles from "@/fixtures/articles";
+import animateArticles from "@/views/Articles/animate";
 
 export default defineComponent({
-  name: 'Articles',
+  name: "Articles",
   components: {
     SectionHeader,
     FooterSection,
   },
   setup() {
-    onMounted(() => animateArticles())
+    onMounted(() => animateArticles());
 
     return {
       articles,
-    }
+    };
   },
-})
+});
 </script>
 
 <style scoped src="@/views/Articles/style.scss" lang="scss"></style>
